@@ -139,3 +139,18 @@ void levelOrder(binaryTreeNode<T> *root)
 
 ## 二叉树抽象类
 
+```C++
+template <class T>
+class binaryTree
+{
+    public:
+        virtual ~binaryTree(){}
+        virtual bool empty() const = 0;
+        virtual int size() const = 0;
+        virtual void preOrder(void(*) (T*)) = 0;
+        virtual void inOrder(void(*) (T*)) = 0;
+        virtual void postOrder(void(*) (T*)) = 0;
+        virtual void leveOrder(void(*) (T*)) = 0;
+};
+```
+
