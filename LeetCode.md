@@ -29,13 +29,24 @@ ListNode* mergeTwoLists(ListNode *list1,ListNode *list2)
     if(list2 == nullptr && list1 != nullptr)  //2为空1不为空
         return list1;
     
-    ListNode *list;  //声明一个头结点，用于返回合并后的链表
+    ListNode *list;  //声明一个新链表作为结果返回
     
-    while(list1->next != nullptr || list2->next != nullptr)
-    {
-        list1 = list1->next;  //从链表1的首节点开始比较
-        list2 = list2->next;  //从链表2的首节点开始比较
-        
+    list1 = list1->next;
+    list2 = list2->next
+    
+    while(list1->next != nullptr && list2->next != nullptr)
+    {        
+        if(list1.val <= list2.val) 
+        {
+            list->next = list1;
+            list1 = list1->next;
+        }
+        else
+        {
+            list->next = list2;
+            list2 = list2->next;
+        }
+        list = list->next;
     }
     
     return list;
