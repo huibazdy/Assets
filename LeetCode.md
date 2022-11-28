@@ -22,34 +22,27 @@ struct ListNode
 
 ListNode* mergeTwoLists(ListNode *list1,ListNode *list2)
 {
-    if(list1 == nullptr && list2 == nullptr)  //两个链表都为空
-        return nullptr;
-    if(list1 == nullptr && list2 != nullptr)  //1为空2不为空
-        return list2;
-    if(list2 == nullptr && list1 != nullptr)  //2为空1不为空
-        return list1;
+    //使用带头结点的链表方案
     
-    ListNode *list;  //声明一个新链表作为结果返回
+    ListNode *list = new ListNode;  //声明一个新链表作为结果返回
+    ListNode *temp = list；  //用于新链表生成，会变
     
-    list1 = list1->next;
-    list2 = list2->next
-    
-    while(list1->next != nullptr && list2->next != nullptr)
+    while(list1 != nullptr && list2 != nullptr)
     {        
         if(list1.val <= list2.val) 
         {
-            list->next = list1;
+            temp->next = list1;
             list1 = list1->next;
         }
         else
         {
-            list->next = list2;
+            temp->next = list2;
             list2 = list2->next;
         }
-        list = list->next;
+        temp = temp->next;
     }
     
-    return list;
+    return list->next;  //因为采用的是带头结点的链表，所以返回首节点需要指向下一个位置
 }
 ```
 
