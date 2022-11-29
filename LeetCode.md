@@ -98,7 +98,7 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
         }
         else
         {
-            return L->next;  //此处可以
+            return L->next;  //此处可以省略
         }
     }
 
@@ -166,3 +166,47 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 }
 ```
 
+
+
+### 【19】删除链表的倒数第N个节点
+
+给定一个链表，删除链表倒数第n个节点，并返回链表头结点。
+
+已知：
+
+* 节点数为：`sz`，且`1 <= sz <= 30`
+* n满足：`1 <= n <= sz`
+
+```C++
+ListNode* removeNthFromEnd(ListNode *head,int n)
+{
+    int sz = 1;              //存储链表元素个数
+    ListNode *temp = head;   //用于遍历链表来计算链表元素个数
+    while(temp->next != nullptr)
+    {
+        ++sz;
+        temp = temp->next;
+    }
+    
+    if(n <= sz)   //如果输入n超出元素总个数则无意义
+    {
+        int m = sz - n + 1;   //倒数第n个节点就是正数第m个节点
+        ListNode *dummy = new ListNode;  //新建哑结点
+        dummy->next = head;   //哑结点链接到现在的头结点
+        ListNode *pre = dummy;   //用来记录要删除节点的前一个节点，初始化为哑结点
+        for(int i = 1; i < m ; i++)  
+        {
+            pre = pre->next;    //找到要删除节点的前一个位置
+            head = head->next;  //找到要删除的节点
+        }
+        pre->next = head->next; //删除节点
+        delete head;
+        return dummy->next;
+    }
+    return head;
+}
+```
+
+
+
+### 【24】两两交换链表中的节点
