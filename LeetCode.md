@@ -59,26 +59,26 @@ ListNode* mergeTwoLists(ListNode *list1,ListNode *list2)
 <img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202211281653113.png" alt="image-20221128165316005" style="zoom:67%;" />
 
 ```C++
-ListNode* addTwoNumber(ListNode *l1,ListNode *l2)
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
 {
     ListNode *L = new ListNode;  //新链表头结点，之后返回头结点的下一个结点
-    ListNode *temp = L;
+    ListNode *temp = L;  //临时节点，用来链接新创建的节点
     
     int carry = 0; //用于进位
     
     while(l1 != nullptr && l2 != nullptr)
     {
+        ListNode *born = new ListNode;
         int ans = l1->val + l2->val + carry;
         if(ans > 9)
         {
-            ListNode *born = new ListNode;
-            born->val = 0;
-            carry = 1;
+            born->val = ans % 10;
+            carry = ans / 10;
         }
         else
         {
-            ListNode *born = new ListNode;
             born->val = ans;
+            carry = ans / 10;
         }
         born->next = nullptr;
         temp->next = born;
@@ -87,10 +87,80 @@ ListNode* addTwoNumber(ListNode *l1,ListNode *l2)
         l2 = l2->next;
     }
     
-    if(l1 == nullptr)
-        temp->next = l2;
-    else if(l2 == nullptr)
-        temp->next = l1;
+    if(!l1 && !l2)    //两个链表长度相等
+    {
+        if(carry) //处理进位
+        {
+            ListNode *born = new ListNode;
+            born->val = carry;
+            born->next = nullptr;
+            temp->next = born;
+        }
+        else
+        {
+            return L->next;  //此处可以
+        }
+    }
+
+    if(!l2)      //l1比l2长，l2先遍历完
+    {
+        while(l1)
+        {
+            ListNode *born = new ListNode;
+            int ans = l1->val + carry;
+            if(ans > 9)
+            {
+                born->val = ans % 10;
+                carry = ans / 10;
+            }
+            else
+            {
+                born->val = ans;
+                carry = ans / 10;
+            }         
+            born->next = nullptr;
+            temp->next = born;
+            temp = temp->next;
+            l1 = l1->next;
+        }
+        if(carry)  //处理进位
+        {
+            ListNode *born = new ListNode;
+            temp->next = born;
+            born->val = carry;
+            born->next = nullptr;
+        }
+    }
+    
+    if(!l1)    //l2比l1长，l1先遍历完
+    {
+        while(l2)  
+        {
+            ListNode *born = new ListNode;
+            int ans = l2->val + carry;
+            if(ans > 9)
+            {
+                born->val = ans % 10;
+                carry = ans / 10;
+            }
+            else
+            {
+                born->val = ans;
+                carry = ans / 10;
+            }
+            born->next = nullptr;
+            temp->next = born;
+            temp = temp->next;
+            l2= l2->next;
+        }
+        if(carry)  //处理进位
+        {
+            ListNode *born = new ListNode;
+            temp->next = born;
+            born->val = carry;
+            born->next = nullptr;
+        }
+    }
     
     return L->next;
 }
