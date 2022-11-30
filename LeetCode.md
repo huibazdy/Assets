@@ -210,3 +210,43 @@ ListNode* removeNthFromEnd(ListNode *head,int n)
 
 
 ### 【24】两两交换链表中的节点
+
+> 节点数目范围：`[0,100]`
+
+
+
+```c++
+ListNode* swapPairs(ListNode *head)
+{
+    int sz;  //用来记录链表元素个数
+    while(head != nullptr)
+    {
+        ++sz;
+        head = head->next;
+    }
+    
+    if(sz <= 1)   //链表中没有元素或只有一个元素
+        return head;
+    
+    ListNode *ans = head;  //用于返回交换后的链表
+    
+    ListNode *slow = head;
+    ListNode *fast = head->next;
+    while(fast != nullptr)
+    {
+        //交换两个节点
+        ListNode *temp = fast->next;
+        fast->next = slow;
+        slow->next = temp;
+        //移动两个定位指针，移动距离为2，此时slow在前，fast反而在后，需要调换一次
+        temp = fast;
+        fast = slow;
+        slow = temp;
+        //移动
+        slow = slow->next->next;
+        fast = fast->next->next;
+    }
+    return ans;
+}
+```
+
