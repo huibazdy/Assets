@@ -250,3 +250,24 @@ ListNode* swapPairs(ListNode *head)
 }
 ```
 
+官方题解：
+
+```C++
+ListNode* swapPairs(ListNode *head)
+{
+    ListNode *dummy = new ListNode(0);
+    dummy->next = head;
+    ListNode *temp = dummy;
+    while(temp->next != nullptr && temp->next->next != nullptr)
+    {
+        ListNode *slow = temp->next;
+        ListNode *fast = temp->next->next;
+        temp->next = fast;
+        slow->next = fast->next;
+        fast->next = slow;
+        temp = slow;
+    }
+    return dummy->next;
+}
+```
+
