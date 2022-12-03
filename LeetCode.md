@@ -271,3 +271,41 @@ ListNode* swapPairs(ListNode *head)
 }
 ```
 
+
+
+### 【61】旋转链表
+
+> 将链表的每个节点向右移动`k`个位置
+
+
+
+![image-20221203164428476](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212031644632.png)
+
+![image-20221203164524684](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212031645726.png)
+
+```c++
+ListNode* rotateRight(ListNode* head,int k)
+{
+    //若链表元素个数为n，其实移动n次就为一个循环，所以实际移动次数只需k除n取余即可
+    int sz = 0；
+    while(head)  //求出链表长度sz
+    {
+        ++sz;
+        head = head->next;
+    }
+    
+    if(sz <= 1)  //链表无元素或只有一个元素，无需移动
+        return head;
+    
+    int movTimes = k % sz;  //实际循环移动次数
+    
+    while(movTimes)  //实现循环移动，每次循环一个位置
+    {
+        
+        --movTimes;
+    }
+    
+    return head;
+}
+```
+
