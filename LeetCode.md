@@ -299,8 +299,12 @@ ListNode* rotateRight(ListNode* head,int k)
     
     int movTimes = k % sz;  //实际循环移动次数
     
+    ListNode *oldHead = head;  //记录旧的head位置，即原首元素位置
+    
     while(movTimes)  //实现循环移动，每次循环一个位置
     {
+        //循环右移movTimes位，实际上就是将新head指向第sz+1-movTimes个元素
+        //再将尾部元素指向旧的head位置
         
         --movTimes;
     }
