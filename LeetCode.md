@@ -364,3 +364,46 @@ ListNode* deleteDuplicates(ListNode* head)
 执行结果：
 
 ![image-20221205151810113](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212051518158.png)
+
+
+
+### 【82】删除已排序链表中的重复值2
+
+> 和上题不同的是，此题需要删除出现重复的数值所对应的所有节点
+
+![image-20221205153615251](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212051536308.png)
+
+可以考虑再增加一个节点来记录重复部分的起始节点
+
+```C++
+ListNode* deleteDuplicates(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr)  //边界条件
+        return head;
+    
+    ListNode *slow = new ListNode;
+    ListNode *fast = new ListNode;   
+    slow = head;
+    fast = head->next;
+    
+    ListNode *preSlow = new ListNode;  //slow前一个节点，用于删除中间重复项
+    preSlow->next = head;
+    
+    while(fast != nullptr)
+    {
+        if(slow->val == fast->val)
+        {
+            preSlow->next = fast;
+            slow = slow->next;
+            fast = fast->next;
+        }
+        else  //slow->val < fast->val
+        {
+            slow = slow->next;
+            fast = fast->next;
+        }
+    }
+    return slow;
+}
+```
+
