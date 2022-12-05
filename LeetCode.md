@@ -284,46 +284,44 @@ ListNode* swapPairs(ListNode *head)
 ```c++
 ListNode* rotateRight(ListNode* head,int k)
 {
-    ListNode *temp = head;  //temp用来遍历链表，求出链表长度
+    if(k == 0 || head == nullptr || head->next == nullptr) //边界条件
+        return head;
     
-    //若链表元素个数为n，其实移动n次就为一个循环，所以实际移动次数只需k除n取余即可
+    ListNode *temp = head;  //temp用来遍历链表，求出链表长度
     int sz = 0;
     while(temp != nullptr)  //求出链表长度sz
     {
         ++sz;
-        temp = temp->next;
+        if(temp->next != nullptr)
+            temp = temp->next;
     }
     
-    if(sz <= 1)  //链表无元素或只有一个元素，无需移动
-        return temp;
+    int movTimes = k % sz;  //实际需要循环移动的次数
     
-    int movTimes = k % sz;  //实际循环移动次数
+    ListNode *PreNode = new ListNode(0);   //初始化一个指针，用来找到倒数第二个节点
+    ListNode *ptrToHead = new ListNode(0); //用来保存循环中的当前head
     
-    ListNode *PreNode = head;//初始化一个指针，用来找到倒数第二个节点
-    
-    while(movTimes)  //实现循环移动，每次循环一个位置
+    while(movTimes--)  //实现循环移动，每次循环一个位置
     {
         //记住当前head节点
-        ListNode *tmp = head;
+        if(head != nullptr)
+            ptrToHead = head;
         
-        //0.找到倒数2个元素,PreNode向后移动sz-2
-        while(sz-2)
+        //0.找到倒数2个元素
+        while(PreNode->next != nullptr && PreNode->next->next != nullptr)
             PreNode = PreNode->next;
             
         //1.将head指向当前最后一个元素
-        while(head->next != nullptr)
-            head = head->next;
+        head = PreNode->next;
         
-        //2.断开当前倒数第二个元素与最后一个元素，即将倒数第二个元素指向nullptr
+        //2.断开当前倒数第二个元素与最后一个元素
         PreNode->next = nullptr;
         
         //3.将当前最后一个元素（head）的next指向当前首元素
-        head->next = tmp;
-        
-        --movTimes;
-    }
-    
+        head->next = ptrToHead;
+    } 
     return head;
 }
 ```
 
+以上程序运行结果：**Time Limit Exceeded**
