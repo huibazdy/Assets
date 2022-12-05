@@ -298,8 +298,8 @@ ListNode* rotateRight(ListNode* head,int k)
     
     int movTimes = k % sz;  //实际需要循环移动的次数
     
-    ListNode *PreNode = new ListNode(0);   //初始化一个指针，用来找到倒数第二个节点
-    ListNode *ptrToHead = new ListNode(0); //用来保存循环中的当前head
+    ListNode *PreNode = new ListNode;   //初始化一个指针，用来找到倒数第二个节点
+    ListNode *ptrToHead = new ListNode; //用来保存循环中的当前head
     
     while(movTimes--)  //实现循环移动，每次循环一个位置
     {
@@ -325,3 +325,42 @@ ListNode* rotateRight(ListNode* head,int k)
 ```
 
 以上程序运行结果：**Time Limit Exceeded**
+
+
+
+### 【83】删除已排序链表中的重复值
+
+给定链表默认按升序排列：
+
+![image-20221205145927617](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212051459678.png)
+
+```C++
+ListNode* deleteDuplicates(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr)  //边界条件
+        return head;
+
+ 	ListNode *slow = new ListNode;
+    ListNode *fast = new ListNode;
+    slow = head;
+    fast = slow->next;
+    while(fast != nullptr)
+    {
+        if(slow->val < fast->val) //依然有序，且不重复
+        {
+            slow = slow->next;
+            fast = fast->next;
+        }
+        else  //存在重复项情况（前提是链表有序，所以只剩下相等的情况），删除重复项
+        {
+            slow->next = fast->next;
+            fast = slow->next;
+        }
+    }
+    return head;       
+}
+```
+
+执行结果：
+
+![image-20221205151810113](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212051518158.png)
