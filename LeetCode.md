@@ -381,29 +381,46 @@ ListNode* deleteDuplicates(ListNode* head)
     if(head == nullptr || head->next == nullptr)  //边界条件
         return head;
     
-    ListNode *slow = new ListNode;
-    ListNode *fast = new ListNode;   
-    slow = head;
-    fast = head->next;
+    //若开头有重复元素，删除开头的重复元素
+    while(head->val == head->next->val)
+    {
+        int temp = head->val;
+        head = head->next;
+        if(head->next->val != temp) //进入下一个怀疑存在开头重复元素的区间
+        {
+            head = head->next;
+        }
+    }
     
+    //开头两个元素不相等
+    ListNode *slow = new ListNode;
+    ListNode *fast = new ListNode;
     ListNode *preSlow = new ListNode;  //slow前一个节点，用于删除中间重复项
+    if(head != nullptr && head->next != nullptr)
+    {
+        slow = head;
+    	fast = head->next;
+    }
     preSlow->next = head;
     
     while(fast != nullptr)
     {
-        if(slow->val == fast->val)
+        if(slow->val < fast->val)
         {
-            preSlow->next = fast;
+            preSlow = preSlow->next;
             slow = slow->next;
             fast = fast->next;
         }
-        else  //slow->val < fast->val
+        //slow->val == fast->val
+        while(slow->val == fast->val)
         {
-            slow = slow->next;
             fast = fast->next;
         }
+        slow = fast;
+        fast = fast->next;
+        pre
     }
-    return slow;
+    return head;
 }
 ```
 
