@@ -290,16 +290,21 @@ ListNode* swapPairs(ListNode *head)
 ```c++
 ListNode* rotateRight(ListNode* head,int k)
 {   
-    int n = 0;
-    ListNode *temp = new ListNode;
-    temp = head
+    int n = 0;  //存储链表长度
+    ListNode *temp = new ListNode;//用于遍历链表来计算表长
+    temp = head;
     while(temp)  //计算链表长度
     {
         ++n;
         temp = temp->next;
     }
     
-    int m = k % n; //实际旋转长度
+    int m; //存储实际旋转长度
+    if(n != 0)  //防止除数为0报错
+        m = k % n;
+    else
+        return head;
+    
     if(k == 0 || m == 0 || head == nullptr || head->next == nullptr) //边界条件
         return head;
     
@@ -309,12 +314,13 @@ ListNode* rotateRight(ListNode* head,int k)
     newStart = oldEnd = newEnd = head;
     
     //移动m次找到新的表头节点
-    while(m--)
+    int movTimes = n - m;
+    while(movTimes-- && newStart->next != nullptr)
         newStart = newStart->next;
     //找到新的链表结尾
     while(newEnd->next != newStart)
         newEnd = newEnd->next;
-    //移动n-1次找到尾部节点
+    //移动n-1次找到原链表尾部节点
     while(oldEnd->next != nullptr)
         oldEnd = oldEnd->next;
     
@@ -324,16 +330,6 @@ ListNode* rotateRight(ListNode* head,int k)
     return newStart;         //返回新表头
 }
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 
