@@ -373,105 +373,52 @@ ListNode* deleteDuplicates(ListNode* head)
 
 ![image-20221205153615251](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212051536308.png)
 
-可以考虑再增加一个节点来记录重复部分的起始节点
+【**官方题解**】
 
-```C++
+> 因为重复元素可能出现在链表的开头，所以`head`可能会变，故而需要添加哑结点`dummy`
+
+```c++
 ListNode* deleteDuplicates(ListNode* head)
 {
-    if(head == nullptr || head->next == nullptr)  //边界条件
+    //边界条件：无节点或只有一个节点
+    if(head == nullptr || head->next == nullptr)
         return head;
     
-    //若开头有重复元素，删除开头的重复元素
-    ListNode *travel = new ListNode;
-	while(head != null)
-    {
-        while(travel->val == head->val) //开始遍历开头的第一个重复元素区间
-        {
-            if(travel->next != nullptr)
-                travel = travle->next;
-            else  //遍历到最后也是重复元素
-                return nullptr;
-        }
-		//第一个重复元素区间遍历结束，开始检查第二个区间（出现第一个不同的元素）
-        head = travel;
-    }
-    
-    //开头两个元素不相等
-    ListNode *slow = new ListNode;
-    ListNode *fast = new ListNode;
-    ListNode *preSlow = new ListNode;  //slow前一个节点，用于删除中间重复项
-    if(head != nullptr && head->next != nullptr)
-    {
-        slow = head;
-    	fast = head->next;
-    }
-    preSlow->next = head;
-    
-    while(fast != nullptr)
-    {
-        if(slow->val < fast->val)
-        {
-            preSlow = preSlow->next;
-            slow = slow->next;
-            fast = fast->next;
-        }
-        //slow->val == fast->val
-        while(slow->val == fast->val)
-        {
-            fast = fast->next;
-        }
-        slow = fast;
-        fast = fast->next;
-        preSlow->next = slow;
-    }
-    return head;
-}
-```
-
-开头就有重复元素的情况讨论：
-
-```C++
-ListNode *travel = new ListNode;
-travel = head->next;
-while(travel->val == head->val) //开始遍历开头的第一个重复元素区间
-{
-    if(travel->next != nullptr)
-        travel = travle->next;
-    else                        //遍历到链表最后也是重复元素
-        return nullptr;
-}
-//第一个重复元素区间遍历结束，开始检查第二个区间（出现第一个不同的元素）
-head = travel;
-```
-
-官方题解：
-
-```C++
-//创建哑结点，记录重复元素值
-ListNode* deleteDuplicates(ListNode* head)
-{
-    if(head == nullptr || head->next == nullptr)  //边界条件
-        return head;
-    
+    //添加哑结点，并链接到当前head元素
     ListNode *dummy = new ListNode(0,head);
-    ListNode *cur = head;
     
-    while(cur && cur->next)
+    ListNode *cur = new ListNode;      //声明一个用来遍历链表的节点指针：cur
+    cur = dummy;                       //为什么初始化为dummy而不是head？？？             
+    
+    //为了适用while中的条件，才将cur初始化为dummy而不是head
+    while(cur->next != nullptr && cur->next->next != nullptr)
     {
-        if(cur->val == cur->next->val)
+        if(cur->next->val == cur->next->next->val)
         {
-            int temp = cur->val;
-            while(cur->next->next && cur->next->next->val == temp)
+            int temp = cur->next->val;                   //记录重复的值
+            while(cur->next && cur->next->val == temp)     //继续向后遍历直到出现不同的值
                 cur->next = cur->next->next;
         }
         else
         {
-            cur = cur->next->next;
+            cur = cur->next;
         }
     }
     return dummy->next;
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -487,7 +434,7 @@ ListNode* reverseList(ListNode* head)
     ListNode *end = new ListNode;
     start = end = head;
     
-    while(end->next != nullptr)  //找到
+    while(end->next != nullptr)  //找到尾部元素
         end = end->next;
 }
 ```
