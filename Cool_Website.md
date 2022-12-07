@@ -48,3 +48,4 @@
 * [W3Cschool](https://www.w3cschool.cn/)
 * [W3school](https://www.w3school.com.cn/)
 * [OI-Wiki](https://oi-wiki.org/)
+* [Qt豆子的博客](https://www.devbean.net/)
