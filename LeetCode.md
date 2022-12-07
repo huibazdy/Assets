@@ -281,50 +281,59 @@ ListNode* swapPairs(ListNode *head)
 
 ![image-20221203164524684](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212031645726.png)
 
+设链表长度为`n`
+
+如果旋转次数为`n` 的整数倍则还原，即实际旋转长度为`m = k % n`
+
+实际上旋转`m`个位置，就是将最后的`m`个元素组成的链表拼接到开头。
+
 ```c++
 ListNode* rotateRight(ListNode* head,int k)
-{
-    if(k == 0 || head == nullptr || head->next == nullptr) //边界条件
-        return head;
-    
-    ListNode *temp = head;  //temp用来遍历链表，求出链表长度
-    int sz = 0;
-    while(temp != nullptr)  //求出链表长度sz
+{   
+    int n = 0;
+    ListNode *temp = new ListNode;
+    temp = head
+    while(temp)  //计算链表长度
     {
-        ++sz;
-        if(temp->next != nullptr)
-            temp = temp->next;
+        ++n;
+        temp = temp->next;
     }
     
-    int movTimes = k % sz;  //实际需要循环移动的次数
+    int m = k % n; //实际旋转长度
+    if(k == 0 || m == 0 || head == nullptr || head->next == nullptr) //边界条件
+        return head;
     
-    ListNode *PreNode = new ListNode;   //初始化一个指针，用来找到倒数第二个节点
-    ListNode *ptrToHead = new ListNode; //用来保存循环中的当前head
+    ListNode *newStart = new ListNode;
+    ListNode *oldEnd = new ListNode;
+    ListNode *newEnd = new ListNode;
+    newStart = oldEnd = newEnd = head;
     
-    while(movTimes--)  //实现循环移动，每次循环一个位置
-    {
-        //记住当前head节点
-        if(head != nullptr)
-            ptrToHead = head;
-        
-        //0.找到倒数2个元素
-        while(PreNode->next != nullptr && PreNode->next->next != nullptr)
-            PreNode = PreNode->next;
-            
-        //1.将head指向当前最后一个元素
-        head = PreNode->next;
-        
-        //2.断开当前倒数第二个元素与最后一个元素
-        PreNode->next = nullptr;
-        
-        //3.将当前最后一个元素（head）的next指向当前首元素
-        head->next = ptrToHead;
-    } 
-    return head;
+    //移动m次找到新的表头节点
+    while(m--)
+        newStart = newStart->next;
+    //找到新的链表结尾
+    while(newEnd->next != newStart)
+        newEnd = newEnd->next;
+    //移动n-1次找到尾部节点
+    while(oldEnd->next != nullptr)
+        oldEnd = oldEnd->next;
+    
+    newEnd->next = nullptr;  //断开新表尾部与新表头部
+    oldEnd->next = head;     //拼接
+    
+    return newStart;         //返回新表头
 }
 ```
 
-以上程序运行结果：**Time Limit Exceeded**
+
+
+
+
+
+
+
+
+
 
 
 
