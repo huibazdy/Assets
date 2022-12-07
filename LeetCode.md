@@ -382,14 +382,18 @@ ListNode* deleteDuplicates(ListNode* head)
         return head;
     
     //若开头有重复元素，删除开头的重复元素
-    while(head->val == head->next->val)
+    ListNode *travel = new ListNode;
+	while(head != null)
     {
-        int temp = head->val;
-        head = head->next;
-        if(head->next->val != temp) //进入下一个怀疑存在开头重复元素的区间
+        while(travel->val == head->val) //开始遍历开头的第一个重复元素区间
         {
-            head = head->next;
+            if(travel->next != nullptr)
+                travel = travle->next;
+            else  //遍历到最后也是重复元素
+                return nullptr;
         }
+		//第一个重复元素区间遍历结束，开始检查第二个区间（出现第一个不同的元素）
+        head = travel;
     }
     
     //开头两个元素不相等
@@ -418,9 +422,73 @@ ListNode* deleteDuplicates(ListNode* head)
         }
         slow = fast;
         fast = fast->next;
-        pre
+        preSlow->next = slow;
     }
     return head;
+}
+```
+
+开头就有重复元素的情况讨论：
+
+```C++
+ListNode *travel = new ListNode;
+travel = head->next;
+while(travel->val == head->val) //开始遍历开头的第一个重复元素区间
+{
+    if(travel->next != nullptr)
+        travel = travle->next;
+    else                        //遍历到链表最后也是重复元素
+        return nullptr;
+}
+//第一个重复元素区间遍历结束，开始检查第二个区间（出现第一个不同的元素）
+head = travel;
+```
+
+官方题解：
+
+```C++
+//创建哑结点，记录重复元素值
+ListNode* deleteDuplicates(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr)  //边界条件
+        return head;
+    
+    ListNode *dummy = new ListNode(0,head);
+    ListNode *cur = head;
+    
+    while(cur && cur->next)
+    {
+        if(cur->val == cur->next->val)
+        {
+            int temp = cur->val;
+            while(cur->next->next && cur->next->next->val == temp)
+                cur->next = cur->next->next;
+        }
+        else
+        {
+            cur = cur->next->next;
+        }
+    }
+    return dummy->next;
+}
+```
+
+
+
+### 【206】反转链表
+
+```C++
+ListNode* reverseList(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr)
+        return head;
+    
+    ListNode *start = new ListNode;
+    ListNode *end = new ListNode;
+    start = end = head;
+    
+    while(end->next != nullptr)  //找到
+        end = end->next;
 }
 ```
 
