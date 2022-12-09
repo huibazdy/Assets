@@ -432,15 +432,11 @@ ListNode* deleteDuplicates(ListNode* head)
 ```C++
 ListNode* reverseList(ListNode* head)
 {
-    if(head == nullptr || head->next == nullptr)
-        return head;
     
-    ListNode *start = new ListNode;
-    ListNode *end = new ListNode;
-    start = end = head;
-    
-    while(end->next != nullptr)  //找到尾部元素
-        end = end->next;
 }
 ```
+
+
+
+### 【92】反转链表2
 
