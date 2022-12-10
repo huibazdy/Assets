@@ -434,7 +434,7 @@ ListNode* deleteDuplicates(ListNode* head)
 ```C++
 ListNode* reverseList(ListNode* head)
 {
-    if(head == nullptr || head->next == nullptr)
+    if(head == nullptr || head->next == nullptr)  //边界条件：无节点或只有一个节点
         return head;
     else
     {
@@ -461,14 +461,36 @@ ListNode* reverseList(ListNode* head)
 
 执行结果：
 
-![image-20221210141742192](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212101417299.png)
+<img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212101417299.png" alt="image-20221210141742192"  />
 
-【方法二】头插法
+【方法二】==***头插法***==
 
 ```C++
+ListNode* reverseList(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr)  //边界条件：无节点或只有一个节点
+        return head;
+    else
+    {
+        ListNode *dummy = new ListNode(0,head);  //头插法起始哑结点
+        ListNode *temp = new ListNode();  //用来记录上一次插入的节点
+        temp = nullptr;
+        
+        while(head != nullptr)
+        {
+            dummy->next = head; //头插连接新节点
+            head = head->next;    //更新head
+            dummy->next->next = temp;  //断开旧head
+            temp = dummy->next;  //更新temp为这一次插入的节点以便下次再插入新节点
+        }
+        return dummy->next;
+    }
+}
 ```
 
+提交结果：
 
+![image-20221210233723478](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212102337532.png)
 
 
 
