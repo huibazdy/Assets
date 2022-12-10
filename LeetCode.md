@@ -429,12 +429,46 @@ ListNode* deleteDuplicates(ListNode* head)
 
 ### 【206】反转链表
 
+【方法一】==***三指针迭代***==
+
 ```C++
 ListNode* reverseList(ListNode* head)
 {
-    
+    if(head == nullptr || head->next == nullptr)
+        return head;
+    else
+    {
+        ListNode *start = new ListNode;  
+        ListNode *mid = new ListNode;
+        ListNode *end = new ListNode;
+        start->next = head;
+        mid = head;
+        end = head->next;
+        while(end != nullptr)
+        {
+            mid->next = start;  //反转节点
+            //三个节点整体后移一个位置
+            start = mid;
+            mid = end;
+            end = end->next;
+        }
+        mid->next = start;  //最后一次end已经为null但是还差尾部元素的一次反转
+        head->next = nullptr; //将之前的头节点接“接地”，第一次反转到了初始start
+        return mid;
+    }
 }
 ```
+
+执行结果：
+
+![image-20221210141742192](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212101417299.png)
+
+【方法二】头插法
+
+```C++
+```
+
+
 
 
 
