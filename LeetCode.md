@@ -496,3 +496,4 @@ ListNode* reverseList(ListNode* head)
 
 ### 【92】反转链表2
 
+![image-20221211131042123](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212111310244.png)
