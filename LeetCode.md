@@ -333,6 +333,8 @@ ListNode* rotateRight(ListNode* head,int k)
 
 
 
+
+
 ### 【83】删除已排序链表中的重复值
 
 给定链表默认按升序排列：
@@ -369,6 +371,8 @@ ListNode* deleteDuplicates(ListNode* head)
 执行结果：
 
 ![image-20221205151810113](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212051518158.png)
+
+
 
 
 
@@ -412,6 +416,8 @@ ListNode* deleteDuplicates(ListNode* head)
     return dummy->next;
 }
 ```
+
+
 
 
 
@@ -494,6 +500,8 @@ ListNode* reverseList(ListNode* head)
 
 
 
+
+
 ### 【92】反转链表2
 
 ![image-20221211131042123](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212111310244.png)
@@ -549,6 +557,8 @@ ListNode* reverseBetween(ListNode* head, int left, int right)
 
 
 
+
+
 ### 【203】移除链表元素
 
 ![image-20221211213257209](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212112132285.png)
@@ -561,19 +571,14 @@ ListNode* removeElements(ListNode* head, int val)
     if(head == nullptr)
         return head;
     ListNode *dummy = new ListNode(0,head);//由于头结点可能改变，所以需要声明一个哑结点
-    //声明一个用于遍历链表的指针cur，初始化为dummy
-    ListNode *cur = new ListNode;
+    ListNode *cur = new ListNode;//声明一个用于遍历链表的指针cur，初始化为dummy
     cur = dummy;
     while(cur->next != nullptr)
     {
         if(cur->next->val != val)
-        {
             cur = cur->next; //继续遍历
-        }
         else
-        {
             cur->next = cur->next->next; //删除节点
-        }
     }
     return dummy->next;
 }
@@ -582,3 +587,95 @@ ListNode* removeElements(ListNode* head, int val)
 运行结果：
 
 ![image-20221211214856473](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212112148523.png)
+
+
+
+
+
+### 【141】判断链表是否有环
+
+> 怎么定义有环？
+>
+> 如果链表中某个节点，可以通过next指针再次到达，则链表中有环。
+
+![image-20221212153423669](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212121534740.png)
+
+
+
+![image-20221212153727646](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212121537719.png)
+
+```c++
+bool hasCycle(ListNode *head)
+{
+    //快慢指针
+    ListNode *slow = new ListNode;
+    ListNode *fast = new ListNode;
+    slow = fast = head;
+    //两个指针开始遍历
+    while(fast != nullptr && fast->next != nullptr)
+    {
+        slow = slow->next;        //慢指针一次走一步
+        fast = fast->next->next;  //快指针一次走两步
+        if(slow == fast)          //快慢指针相遇，说明有环
+            return true;
+    }
+    return false;
+}
+```
+
+执行结果：
+
+![image-20221212160742306](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212121607356.png)
+
+
+
+
+
+### 【142】环形链表环的入口
+
+* 设快指针走过的路程为：`2m`，慢指针走过的路程为：`m`
+* 设环的长度为`n`，当两个指针相遇时，快指针比慢指针多走环长度的整数倍：`2m = m + N * n`
+* 可以得出：`m = n * N`，也就是说慢指针走的也是环长的整数倍
+
+> ***关键***：slow与fast相遇后，slow从相遇点开始，新指针从head开始，步长为1，相遇点即入口节点
+
+```c++
+ListNode *detectCycle(ListNode *head)
+{
+    if(head == nullptr || head->next == nullptr)
+        return nullptr;
+    //1.判断是否存在环
+    bool isCycle = false;
+    ListNode *slow = new ListNode;
+    ListNode *fast = new ListNode;
+    slow = fast = head;
+    while(fast != nullptr && fast->next != nullptr)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+        if(fast == slow)
+        {
+            isCycle = true;
+            break;
+        }
+    }
+    if(!isCycle)
+        return nullptr;
+    //2.找到环的入口：slow从相遇点开始，new一个节点从head开始，步长都为1，相遇点即入口
+    ListNode *temp = new ListNode;
+    temp = head;
+    if(isCycle)
+    {
+        while(temp != slow)
+        {
+            temp = temp->next;
+            slow = slow->next;
+        }
+    }
+    return slow;
+}
+```
+
+执行结果：
+
+![image-20221212204121611](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212122041667.png)
