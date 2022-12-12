@@ -497,3 +497,88 @@ ListNode* reverseList(ListNode* head)
 ### 【92】反转链表2
 
 ![image-20221211131042123](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212111310244.png)
+
+
+
+```C++
+ListNode* reverseBetween(ListNode* head, int left, int right)
+{
+    if(head == nullptr || head->next == nullptr || left == right)
+        return head;
+    
+    //头结点可能变化，多以需要加入哑结点
+    ListNode *dummy = new ListNode(0,head);
+    
+    //分析问题关键在于找到需要反转的起止点,来反转中间部分，即：(start,end)
+    ListNode *start = new ListNode;       //左开区间（待反转部分的前一个元素）
+    ListNode *end = new ListNode(0,head); //右开区间（待反转部分的后一个元素）
+    
+    start = dummy;  //找到第left个元素的前一个元素位置
+    while(--left)   //start需要移动left - 1次
+    {
+        if(start->next != nullptr)
+        	start = start->next;
+        else
+            return head; //第left个元素就是最后一个元素，无需反转
+    }      
+    
+    int mov = right + 1;
+    while(mov--)  //需要移动right + 1次
+    {
+        end = end->next;
+    }
+    
+    ListNode *H = new ListNode;
+    ListNode *temp = new ListNode;
+    H = start->next;  //头插法链表部分head元素
+    temp = end; //头插法临时元素，反转全部链表初始化为nullptr，因为nullptr就是边界，此时边界为end
+    while(H != end) //执行头插法反转
+    {
+        start->next = H; //头插
+        H = H->next;  //更新‘head’
+        start->next->next = temp; //断开头插元素原链接
+        temp = start->next; //更新下一个头插位置
+    }
+    return dummy->next;
+}
+```
+
+执行结果：
+
+![image-20221212143111174](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212121431230.png)
+
+
+
+### 【203】移除链表元素
+
+![image-20221211213257209](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212112132285.png)
+
+
+
+```C++
+ListNode* removeElements(ListNode* head, int val)
+{
+    if(head == nullptr)
+        return head;
+    ListNode *dummy = new ListNode(0,head);//由于头结点可能改变，所以需要声明一个哑结点
+    //声明一个用于遍历链表的指针cur，初始化为dummy
+    ListNode *cur = new ListNode;
+    cur = dummy;
+    while(cur->next != nullptr)
+    {
+        if(cur->next->val != val)
+        {
+            cur = cur->next; //继续遍历
+        }
+        else
+        {
+            cur->next = cur->next->next; //删除节点
+        }
+    }
+    return dummy->next;
+}
+```
+
+运行结果：
+
+![image-20221211214856473](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212112148523.png)
