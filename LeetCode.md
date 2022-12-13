@@ -747,8 +747,53 @@ bool isPalindrome(ListNode* head)
 {
     if(head->next == nullptr)
         return true;
+    //计算链表长度
+    int n = 0;
+    ListNode *temp = new ListNode;
+    temp = head;
+    while(temp != nullptr)
+    {
+        ++n;
+        temp = temp->next;
+    }
     
+    //找到反转开始前一个位置（start），从head开始移动次数为mov
+    int mov;
+    if(n % 2 == 0)  //n为偶
+        mov = n / 2 - 1;
+    else            //n为奇
+        mov = n / 2;
+        
+    //三指针反转链表
+    ListNode *start = new ListNode;
+    ListNode *mid = new ListNode;
+    ListNode *end = new ListNode;
+    start = head;
+    while(mov--)
+        start = start->next;  //利用mov将start移动到指定位置
+    mid = start->next;
+    end = start->next->next;
+    while(end != nullptr)
+    {
+        mid->next = start;
+        start = mid;
+        mid = end;
+        end = end->next;
+    }
+    mid->next = start;
     
+    //比较后半部分（可能会比前半少一个元素）与前半部分，比较次数也为mov
+    while(mov--)
+    {
+        if(head->val == mid->val)
+        {
+            head = head->next;
+            mid = mid->next;
+        }
+        else
+            return false;
+    }
+    return true;
 }
 ```
 
