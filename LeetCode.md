@@ -747,30 +747,20 @@ bool isPalindrome(ListNode* head)
 {
     if(head->next == nullptr)
         return true;
-    //计算链表长度
-    int n = 0;
-    ListNode *temp = new ListNode;
-    temp = head;
-    while(temp != nullptr)
+    //1. 快慢指针找到链表中点
+    ListNode *slow = new ListNode;  //步长为1
+    ListNode *fast = new ListNode;  //步长为2
+    slow = fast = head;
+    while(slow != nullptr && fast != nullptr)
     {
-        ++n;
-        temp = temp->next;
-    }
-    
-    //找到反转开始前一个位置（start），从head开始移动次数为mov
-    int mov;
-    if(n % 2 == 0)  //n为偶
-        mov = n / 2 - 1;
-    else            //n为奇
-        mov = n / 2;
-        
-    //三指针反转链表
+        slow = slow->next;
+        fast = fast->next->next;
+    }    
+    //2. 三指针反转后半部分链表
     ListNode *start = new ListNode;
     ListNode *mid = new ListNode;
     ListNode *end = new ListNode;
-    start = head;
-    while(mov--)
-        start = start->next;  //利用mov将start移动到指定位置
+    start = slow;
     mid = start->next;
     end = start->next->next;
     while(end != nullptr)
@@ -781,9 +771,8 @@ bool isPalindrome(ListNode* head)
         end = end->next;
     }
     mid->next = start;
-    
-    //比较后半部分（可能会比前半少一个元素）与前半部分，比较次数也为mov
-    while(mov--)
+    //3. 比较后半部分（可能会比前半少一个元素）与前半部分
+    while(head->next != mid)
     {
         if(head->val == mid->val)
         {
@@ -798,3 +787,4 @@ bool isPalindrome(ListNode* head)
 ```
 
 > 思路二：使用***栈***，先将后半部分值入栈；再出栈与前半部分比较
+
