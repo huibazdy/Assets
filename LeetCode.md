@@ -631,7 +631,7 @@ bool hasCycle(ListNode *head)
 
 
 
-### 【142】环形链表环的入口
+### 【142】环形链表环入口
 
 * 设快指针走过的路程为：`2m`，慢指针走过的路程为：`m`
 * 设环的长度为`n`，当两个指针相遇时，快指针比慢指针多走环长度的整数倍：`2m = m + N * n`
@@ -679,3 +679,58 @@ ListNode *detectCycle(ListNode *head)
 执行结果：
 
 ![image-20221212204121611](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212122041667.png)
+
+
+
+
+
+### 【160】相交链表
+
+思路：
+
+<img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212131437279.png" alt="image-20221213143718178" style="zoom: 50%;" />
+
+如上图，若两个链表有交点，设链表A的节点数为`a`，链表B的节点数为`b`，公共链表的节点数为`c`（从交点到链表尾部的元素）。
+
+令`Pa`指向A首元素，`Pb`指向B首元素，Pa遍历（步长为1）完A链表走了`a`个节点，Pb遍历（步长为1）完A链表走了`b`个节点。
+
+此时，再令Pa指向`headB`，Pb指向`headA`，再次同时开始遍历，直到都走到交点处，此时两个指针遍历过的节点数分别为：
+
+Pa遍历的节点数：`a + (b - c)`
+
+Pb遍历的节点数：`b + (a - c)`
+
+可以容易得出上面两个式子相等，即再次开始遍历后，若这两个指针相等，则存在交点。
+
+
+
+```C++
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
+{
+    if(headA == nullptr || headB == nullptr)
+        return nullptr;
+    ListNode *pa = new ListNode;
+    ListNode *pb = new ListNode;
+    pa = headA;
+    pb = headB;
+    while(pa != pb)
+    {
+        if(pa->next != nullptr)
+            pa = pa->next;
+        else             //pa已经遍历到ListA尾部
+            pa = headB;      
+        if(pb != nullptr)
+            pb = pb->next;
+        else             //pb已经遍历到ListB尾部
+            pb = headA;      
+    }
+    return pa;  //包括了相交点，以及无相交都指向nullptr的情况
+}
+```
+
+执行结果：
+
+![image-20221213172114512](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212131721575.png)
+
+
+
