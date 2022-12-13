@@ -715,7 +715,7 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
     pb = headB;
     while(pa != pb)
     {
-        if(pa->next != nullptr)
+        if(pa != nullptr)
             pa = pa->next;
         else             //pa已经遍历到ListA尾部
             pa = headB;      
@@ -730,7 +730,26 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
 
 执行结果：
 
-![image-20221213172114512](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212131721575.png)
+![image-20221213172623826](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212131726887.png)
 
 
 
+
+
+### 【234】回文链表
+
+![image-20221213172913847](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212131729918.png)
+
+> 思路一：***反转链表***后半部分比较是否与链表前半部分相同
+
+```c++
+bool isPalindrome(ListNode* head)
+{
+    if(head->next == nullptr)
+        return true;
+    
+    
+}
+```
+
+> 思路二：使用***栈***，先将后半部分值入栈；再出栈与前半部分比较
