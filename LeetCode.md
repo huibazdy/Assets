@@ -745,39 +745,44 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
 ```c++
 bool isPalindrome(ListNode* head)
 {
-    if(head->next == nullptr)
+    //边界条件：无节点或只有一个节点，直接判为回文
+    if(head == nullptr || head->next == nullptr)
         return true;
+    
     //1. 快慢指针找到链表中点
     ListNode *slow = new ListNode;  //步长为1
     ListNode *fast = new ListNode;  //步长为2
     slow = fast = head;
     while(slow != nullptr && fast != nullptr)
     {
-        slow = slow->next;
-        fast = fast->next->next;
-    }    
-    //2. 三指针反转后半部分链表
-    ListNode *start = new ListNode;
-    ListNode *mid = new ListNode;
-    ListNode *end = new ListNode;
-    start = slow;
-    mid = start->next;
-    end = start->next->next;
-    while(end != nullptr)
-    {
-        mid->next = start;
-        start = mid;
-        mid = end;
-        end = end->next;
+        slow = slow->next; 
+        if(fast->next != nullptr)     
+        	fast = fast->next->next;
+        else                          
+            fast = fast->next;
     }
-    mid->next = start;
-    //3. 比较后半部分（可能会比前半少一个元素）与前半部分
-    while(head->next != mid)
+    
+    //2. 头插法反转后半部分链表
+    ListNode *dummy = new ListNode;  //为待反转部分创建哑结点
+    ListNode *temp = new ListNode;          //临时节点
+    temp = nullptr;
+    while(slow != nullptr)  //slow就是待反转部分的“head”节点
     {
-        if(head->val == mid->val)
+        dummy->next = slow;  //头插
+        slow = slow->next;   //更新“head”
+        dummy->next->next = temp;  //断开原链接
+        temp = dummy->next;  //更新temp
+    }
+    
+    //3. 比较后半部分（可能会比前半少一个元素）与前半部分
+    ListNode *start = new ListNode;
+    start = dummy->next;
+    while(start != nullptr)
+    {
+        if(head->val == start->val)
         {
             head = head->next;
-            mid = mid->next;
+            start = start->next;
         }
         else
             return false;
@@ -786,5 +791,10 @@ bool isPalindrome(ListNode* head)
 }
 ```
 
-> 思路二：使用***栈***，先将后半部分值入栈；再出栈与前半部分比较
+执行结果：
 
+![image-20221214150001080](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212141500153.png)
+
+
+
+> 思路二：使用***栈***，先将后半部分值入栈；再出栈与前半部分比较
