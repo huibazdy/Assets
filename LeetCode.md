@@ -798,3 +798,69 @@ bool isPalindrome(ListNode* head)
 
 
 > 思路二：使用***栈***，先将后半部分值入栈；再出栈与前半部分比较
+
+
+
+
+
+### 【147】对链表进行插入排序
+
+插入排序：
+
+```c
+void insertionSort(int *arr,int n)
+{
+    int i,j;
+    for(i = 1; i < n; i++)      //首元素默认已排序完成，故需要n-1趟插入
+    {
+        int temp = arr[i];      //记录待插入的元素
+        for(j = i; j > 0 && arr[j-1] > temp; j--)
+            arr[j] = arr[j-1];  //大的元素后移
+        arr[j] = temp;          //找到合适的位置了，插入待插入元素
+    }
+}
+```
+
+
+
+题解：
+
+```c++
+ListNode* insertionSortList(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr)  //边界条件
+        return head;
+    //1. 将链表元素的值全部拷贝出来，存储在nums向量中
+    vector<int> nums;
+    ListNode *cur = new ListNode(0,head);
+    while(cur->next != nullptr)
+    {
+        nums.push_back(cur->next->val);
+        cur = cur->next;
+    }
+    //2. 对nums向量进行插入排序
+    int i,j;
+    for(int i = 1; i < nums.size(); i++)
+    {
+        int temp = nums[i];
+        for(j = i; j > 0 && nums[j-1] > temp; j--)
+            nums[j] = nums[j-1];
+        nums[j] = temp;
+    }
+    //3. 将nums的值依次拷贝进链表
+    ListNode *newCur = new ListNode(0,head);
+    for(int index = 0; index < nums.size(); index++)
+    {
+        if(newCur->next != nullptr)
+        {
+            newCur->next->val = nums[index];
+            newCur = newCur->next;
+        }
+    }
+    return head;
+}
+```
+
+运行结果：
+
+![image-20221214174434724](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212141744810.png)
