@@ -864,3 +864,84 @@ ListNode* insertionSortList(ListNode* head)
 运行结果：
 
 ![image-20221214174434724](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212141744810.png)
+
+
+
+
+
+### 【237】删除链表中的节点
+
+![image-20221215164201863](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212151642951.png)
+
+```C++
+void deleteNode(ListNode* node)
+{
+    ListNode *pre = new ListNode;
+    ListNode *cur = new ListNode;
+    ListNode *end = new ListNode;
+    pre = head;
+    cur = head->next;
+    if(cur->next != nullptr)
+        end = cur->next;
+    else  
+        return head;  //只有两个节点
+    
+    while(end->next != nullptr)  //cur遍历右边界是最后一个节点，因为不能删除尾节点
+    {
+        
+    }
+}
+```
+
+
+
+
+
+### 【238】奇偶链表
+
+![image-20221215170548710](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212151705818.png)
+
+
+
+```c++
+ListNode* oddEvenList(ListNode* head)
+{
+    if(head == nullptr || head->next == nullptr || head->next->next == nullptr)
+        return head;    //n为0、1、2都不需要重排
+    ListNode *dummy = new ListNode;  //新链表的哑结点
+    ListNode *ansDummy = new ListNode; //用于返回结果
+    ansDummy = dummy;  
+    ListNode *cur = new ListNode;  //cur用于遍历原链表奇数节点
+    cur = head;
+    //1. 复制奇数链表
+    while(cur != nullptr)
+    {
+        ListNode *odd = new ListNode; //创建复制的奇数节点
+        odd->val = cur->val; //复制值
+        dummy->next = odd;   //链接
+        dummy = dummy->next;  //更新新链表的尾部
+        if(cur->next != nullptr)
+            cur = cur->next->next; 
+        else
+            break;
+    }
+    //2. 复制偶数链表
+    cur = head->next;  //从原链表第二个元素开始遍历
+    while(cur != nullptr)
+    {
+        ListNode *even =  new ListNode;  //创建复制的偶数节点
+        even->val = cur->val; //复制值
+        dummy->next = even;   //链接
+        dummy = dummy->next;  //更新新链表尾部
+        if(cur->next != nullptr)
+            cur = cur->next->next;
+        else
+            break;
+    }
+    return ansDummy->next;  //返回新链表的头结点
+}
+```
+
+执行结果：
+
+![image-20221215175722432](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212151757504.png)
