@@ -945,3 +945,117 @@ ListNode* oddEvenList(ListNode* head)
 执行结果：
 
 ![image-20221215175722432](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/202212151757504.png)
+
+
+
+
+
+### 【445】两数相加 2
+
+
+
+```c++
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
+{
+    if(l1->val == 0)
+        return l2;
+    if(l2->val == 0)
+        return l1;
+    
+    ListNode *ansDummy = new ListNode  //用来返回结果
+    
+    //1. 头插法反转链表l1
+    ListNode *dummy1 = new ListNode(0,l1);
+    ListNode *temp1 = new ListNode;
+    temp1 = nullptr;
+    while(l1 != nullptr)
+    {
+        dummy1->next = l1;
+        l1 = l1->next;
+        dummy1->next->next = temp1;
+        temp1 = dummy1->next;
+    }
+    //2. 头插法反转链表l2
+    ListNode *dummy2 = new ListNode(0,l2);
+    ListNode *temp2 = new ListNode;
+    temp2 = nullptr;
+    while(l2 != nullptr)
+    {
+        dummy2->next = l2;
+        l2 = l2->next;
+        dummy2->next->next = temp2;
+        temp2 = dummy2->next;
+    }
+    //3. 反转后的链表相加
+    ListNode *head1 = new ListNode;
+    ListNode *head2 = new ListNode;
+    head1 = dummy1->next;
+    head2 = dummy2->next;
+    int carry = 0;  //处理进位
+    int sum  =0;    //处理和
+    while(head1 != nullptr && head2 != nullptr) //先将等长部分都加到链表1上
+    {
+        sum = head1->val + head2->val + carry;
+        if(sum > 9){
+            carry = 1;
+            head1->val = sum % 10;
+        }
+        else{
+            carry = 0;
+            head1->val = sum;
+        }
+        head1 = head1->next;
+        head2 = head2->next;
+    }
+    while(head1 != nullptr)  //链表1更长，此时链表2已遍历完
+    {
+        sum = head1->val + carry;
+        if(sum > 9){
+            carry = 1;
+            head1->val = sum % 10;
+        }
+        else{
+            carry = 0;
+            head1->val = sum;
+        }
+        head1 = head1->next;
+    }
+    //反转此时的链表1
+    head1 = dummy1->next;
+    temp1 = nullptr;
+    while(head1)
+    {
+        ansDummy->next = head1;
+        head1 = head1->next;
+        ansDummy->next->next = temp1;
+        temp1 = ansDummy->next;
+    }
+    
+    while(head2 != nullptr)  //链表2更长，此时链表1已遍历完
+    {
+        sum = head2->val + carry;
+        if(sum > 9){
+            carry = 1;
+            head2->val = sum % 10;
+        }
+        else{
+            carry = 0;
+            head2->val = sum;
+        }
+        head2 = head2->next;
+    }
+    //反转此时的链表2
+    head2 = dummy2->next;
+    temp2 = nullptr;
+    while(head2)
+    {
+        ansDummy->next = head2;
+        head2 = head2->next;
+        ansDummy->next->next = temp2;
+        temp2 = ansDummy->next;
+    }
+    
+    return ansDummy->next; //返回结果
+}
+```
+
