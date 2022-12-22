@@ -39,7 +39,7 @@
 
     ```c++
     #include<iostream>
-    #include"complex.h"    //包含自定义头文件<comple>
+    #include"complex.h"    //包含自定义头文件<complex.h>
     using namespace std;
     
     int main()
@@ -47,6 +47,51 @@
         ...
         return 0;
     }
+    ```
+
+* 头文件实现
+
+    ```c++
+    #ifndef _COMPLEX_
+    #define _COMPLEX_
+    
+    /*1. 前置声明*/
+    class ostream;
+    class complex;
+    /*2. 类声明*/
+    class Complex
+    {
+    public:
+        Complex(double r,double i):re(r),im(i){}
+        double real() const {return re;}
+        double imag() const {return im;}
+    private:
+        double re;  //实部
+        double im;  //虚部
+    };
+    /*3. 类定义*/
+    
+    #endif
+    ```
+
+* 模板类
+
+    ```c++
+    template<typename T>
+    class Complex
+    {
+    public:
+        Complex(T r,T i):re(r),im(i) {}
+        T real() const {return re;}
+        T imag() const {return im;}
+    private:
+        T re;
+        T im;
+    };
+    
+    //使用模板类
+    Complex<double> c1(1.2,0.5);
+    Complex<int> c2(2,3);
     ```
 
     
