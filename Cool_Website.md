@@ -5,6 +5,7 @@
 * [Linux中国](https://linux.cn/)
 * [Linux内核之旅](http://www.kerneltravel.net/)
 * [Linux公社](https://www.linuxidc.com/)
+* [Linux在线源码](https://codebrowser.dev/linux/linux/)
 
 
 
