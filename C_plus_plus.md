@@ -94,6 +94,49 @@
     Complex<int> c2(2,3);
     ```
 
-    
+
+
+## 1.3 构造函数
+
+> **构造函数功能：在创建对象时进行初始化**
+
+三种创建对象的方法：
+
+1. **`Complex c1(1.0,2.0);`**
+2. **`Complex c2;`**
+3. **`Complex *p1 = new Complex(4);`**
+
+> **Singleton（单例）设计模式**允许把**构造函数声明为private**
+
+不允许外界创建
+
+```c++
+class A
+{
+public:
+    static A& getInstance();
+    setup() {...}
+private:
+    A();
+    A(const A& rhs);
+    ...
+};
+
+A& A::getInstance()
+{
+    static A a;
+    return a;
+}
+```
+
+
+
+## 1.4 const成员函数
+
+>  类中的成员函数大致可以分为两种：1）不会改变类中数据；2）可改变类中数据的。
+
+不会改变类中数据的成员函数加上`const`限定符，例如：`double real() const {return re;}`
+
+
 
 # 二、面向对象（下）
