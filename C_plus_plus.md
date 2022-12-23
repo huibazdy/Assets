@@ -187,8 +187,21 @@ inline Complex& _doapl(Complex* ths,const Complex& r)
 {
     ths->re += r.re;
     ths->im += r.im;
-    return *ths
+    return *ths;
 }
+```
+
+
+
+## 1.8 运算符重载
+
+> 复数本来没有`+`运算符（和整型这些内置类型不同），C++允许定义自定义类型的运算符
+
+```c++
+#ifndef _COMPLEX_
+#define _COMPLEX_
+
+#endif
 ```
 
 
