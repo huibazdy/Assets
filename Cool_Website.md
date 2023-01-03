@@ -18,6 +18,7 @@
 * [小龙博客电子书](http://www.guoxiaolong.cn/)
 * [MagazineLib](https://magazinelib.com/)
 * [全渠道搜索](http://dir.scmor.com/)
+* [GitHub中文社区](https://www.githubs.cn/)
 
 
 
