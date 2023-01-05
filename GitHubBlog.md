@@ -28,3 +28,11 @@
     ![image-20230105204050809](C:\Users\zdy\AppData\Roaming\Typora\typora-user-images\image-20230105204050809.png)
 
 * 访问上述命令后出现的网址
+
+
+
+
+
+## 参考资料
+
+1. [GitHub Page与HEXO搭建个人博客](https://blog.csdn.net/yaorongke/article/details/119089190)
