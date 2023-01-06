@@ -45,13 +45,26 @@
 
 ### 2.4 部署到github
 
+1. 安装`hexo-deployer-git`，使用命令：`npm install hexo-deployer-git --save`
+2. 
+
+### 2.5 个性化设置
 
 
 
+### 2.6 功能添加
+
+#### 2.6.1 阅读量统计
+
+
+
+#### 2.6.2 评论功能
 
 ## 参考资料
 
 1. [GitHub Page与HEXO搭建个人博客](https://blog.csdn.net/yaorongke/article/details/119089190)
 2. [用HEXO搭建博客](http://lowrank.science/Hexo-Github/)
 3. [HEXO博客详细教程](https://cloud.tencent.com/developer/article/1662732)
+
+
 
