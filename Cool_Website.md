@@ -58,3 +58,6 @@
 
 * [图标（Icon）集合站](https://fontawesome.com/icons)
 * [阿里巴巴矢量图标库](https://www.iconfont.cn/)
+* [GoDaddy](https://www.godaddy.com/zh-sg)
+* [域名购买踩坑指南](https://de7v.com/pages/49541d/#godaddy)
+
