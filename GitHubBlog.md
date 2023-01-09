@@ -85,12 +85,18 @@
 
     1. 申请LeanCloud账号（注册后需要实名认证并认证邮箱）
     2. 创建应用，在设置->应用凭证找到`APPID`以及`APPKye`
-    3. 主题目录（themes\fluid）下`_config.yml`中`web analytics`字段为`true`来打开统计开关
-    4. 主题目录（themes\fluid）下`_config.yml`中`leancloud`字段，将`APPID`以及`APPKye`复制到相应位置（注意要加一个空格）
-    5. 打开计数功能，统计来源设置为leancloud，主题目录（themes\fluid）下`_config.yml`中`views`字段
-    6. 页面底部展示网站PV、UV统计数，主题目录（themes\fluid）下`_config.yml`中`statistics`字段
+    3. 创建`_Counter`class用来管理统计数据
+    4. 设置网络安全
+    5. 云引擎->WEB->部署->创建函数->复制代码->选择`beforesave`以及`Counter`class->部署
+    6. 主题目录（themes\fluid）下`_config.yml`中`web analytics`字段为`true`来打开统计开关
+    7. 主题目录（themes\fluid）下`_config.yml`中`leancloud`字段，将`APPID`以及`APPKye`复制到相应位置（注意要加一个空格）
+    8. 打开计数功能，统计来源设置为leancloud，主题目录（themes\fluid）下`_config.yml`中`views`字段，改`true`，并添加`format: "{} 次"`
+    9. 页面底部展示网站PV、UV统计数，主题目录（themes\fluid）下`_config.yml`中`statistics`字段，改`true`，添加`pv_format: "总访问量：{} 次"`以及`uv_format: "总访客数：{} 人"`
 
 * **评论功能**
+
+    1. 启用评论插件：主题目录（themes\fluid）下`_config.yml`中`comments`字段，设置`true`，修改`type`为`valine`
+    2. 配置`valine`字段
 
 ### 2.6 功能添加
 
@@ -131,6 +137,11 @@
 1. [GitHub Page与HEXO搭建个人博客](https://blog.csdn.net/yaorongke/article/details/119089190)
 2. [用HEXO搭建博客](http://lowrank.science/Hexo-Github/)
 3. [HEXO博客详细教程](https://cloud.tencent.com/developer/article/1662732)
+4. [阅读量统计](https://cloud.tencent.com/developer/article/1482008)
+5. [阅读量统计2](https://bjtu-hxs.github.io/2018/06/12/leancloud-config/)
+6. [阅读量统计3](https://finisky.eu.org/hexormleancloud/)
+7. [阅读统计量4](https://www.jianshu.com/p/e0a719bac963)
+8. [评论问题解决](https://iyichen.xyz/2022/01/hexo-leancloud-valine-access-fail/)
 
 
 
