@@ -51,3 +51,10 @@
 * [W3school](https://www.w3school.com.cn/)
 * [OI-Wiki](https://oi-wiki.org/)
 * [Qt豆子的博客](https://www.devbean.net/)
+
+
+
+### 博客工具链
+
+* [图标（Icon）集合站](https://fontawesome.com/icons)
+* [阿里巴巴矢量图标库](https://www.iconfont.cn/)

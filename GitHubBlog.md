@@ -98,6 +98,10 @@
     1. 启用评论插件：主题目录（themes\fluid）下`_config.yml`中`comments`字段，设置`true`，修改`type`为`valine`
     2. 配置`valine`字段
 
+* **添加文章结束标识**
+
+    themes路径下`_config.yml`中修改
+
 ### 2.6 功能添加
 
 #### 2.6.1 阅读量统计
