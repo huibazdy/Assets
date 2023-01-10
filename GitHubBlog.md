@@ -112,6 +112,15 @@
 
 
 
+#### 2.6.3 订阅功能
+
+> 可以理解为订报纸，或者杂志，定期就会放在你住宅邮箱中。通过`RSS`功能，对感兴趣的博客进行实时推送。对于读者而言，这样可以缩减搜索时间，也可以及时获得优质博主的更新，避免被搜索带来的额外信息所干扰。
+
+添加RSS功能按照以下几个步骤：
+
+1. 安装RSS插件：`npm i hexo-generator-feed`
+2. 在博客根目录的_config.yml文件中，修改`Extensions`字段
+
 ## 三、新建文章
 
 ### 3.1 图片处理
@@ -133,6 +142,60 @@
 * [KLatexFormula下载地址](https://klatexformula.sourceforge.io/)
 
 ### 4.2 二维码打赏
+
+
+
+## 五、多设备协同
+
+> 【***需求***】
+>         在公司电脑A（Windows10）初始化并部署了Hexo博客，希望在家里的电脑也能远程修改博客配置，新建文章等操作。
+
+首先需要理解，在进行`hexo deploy`部署到github的其实是hexo编译后的文件（用来生成网页的文件），并不是在本地源文件。可以看一下在github仓库中的并没有配置文件等源文件：
+
+![image-20230110203419236](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20230110203419236.png)
+
+以上的仓库内容其实是本地博客根目录下的`public`路径下的内容：
+
+![image-20230110203515770](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20230110203515770.png)
+
+多设备通过Git工具以及github协同，具体步骤为：
+
+1. 在github上新建一个hexo分支；
+2. 
+
+
+
+
+
+## 六、博客管理
+
+### 6.1 几个概念
+
+#### layout
+
+Hexo博客框架中的布局（layout）有默认的三种，分别是：
+
+1. **`post`**，默认布局，对应路径是`source/_posts`
+2. **`page`**，
+3. **`draft`**，
+
+除了默认布局，还可以自定义布局，自定义布局和post路径布局相同，也将存储到`source/_posts`路径。
+
+与layout有关的命令是：**`hexo new [layout] <filename>`**
+
+#### page
+
+#### draft
+
+### 6.2 国内外分流
+
+> 【**背景**】
+>
+> 因为github的服务器在国外，所以百度爬虫不能爬取到你托管博客的github服务器。如果你想让百度能检索到你的文章，可以在国内的`coding page`做托管，这样的结果是在国内访问就走coding page，国外就走github page。
+
+具体步骤如下：（[参考做法](https://blog.csdn.net/sinat_37781304/article/details/82729029?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-6-82729029-blog-119089190.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-6-82729029-blog-119089190.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=13)）
+
+
 
 
 
