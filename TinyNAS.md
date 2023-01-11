@@ -84,12 +84,14 @@
 
 ## 2.2 软件平台
 
-* 树莓派镜像
-* Samba文件共享服务
-* 硬盘自动挂载到共享目录
-* 添加NTFS文件系统支持
-* NextCloud（如果不需要nextcloud网盘的备份、同步等功能，安装Samba就足够使用了）
-* Docker，方便部署软件
+* 安装树莓派镜像
+* 安装Samba文件共享服务
+* 挂载硬盘
+* 设置自动挂载硬盘到共享目录
+* 添加NTFS文件系统支持（修改树莓派）或格式化硬盘为EXT4（修改硬盘）
+* 配置NextCloud（如果不需要nextcloud网盘的备份、同步等功能，安装Samba就足够使用了）
+* 配置内网穿透服务
+* Docker，方便部署软件（可选）
 
 
 
@@ -109,3 +111,4 @@
 2. [树莓派搭建个人网盘](https://zhuanlan.zhihu.com/p/64055553)
 3. [树莓派搭建全功能NAS服务器](https://zhuanlan.zhihu.com/p/399748795)
 4. [树莓派搭建私人网盘](https://zhuanlan.zhihu.com/p/364641320)
+5. [树莓派搭建NAS详细过程](https://www.jb51.net/article/233859.htm)
