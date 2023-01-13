@@ -63,3 +63,12 @@
 * [域名购买踩坑指南](https://de7v.com/pages/49541d/#godaddy)
 * [配色网站](https://colordesigner.io/)
 
+
+
+
+
+### 论文阅读
+
+* [arxiv](https://arxiv.org/)
+* [arxiv检索](https://arxivxplorer.com/)
+
