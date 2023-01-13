@@ -108,9 +108,38 @@
 
 # 三、软件平台
 
+## 3.1 树莓派操作系统安装
 
+### 准备工作
 
+1. 下载树莓派镜像（**Raspberry Pi OS with desktop and recommended software**），[下载地址](https://www.raspberrypi.com/software/operating-systems/)
+2. 下载并安装官方烧录工具（**Raspberry Pi Imager**），[下载地址](https://www.raspberrypi.com/software/)
+3. 将镜像写入SD卡
+4. 烧录完成后会弹出格式化窗口，不要格式化，点击取消即可
 
+### 安装操作系统
+
+1. 插入烧录好系统的SD卡
+2. 连接输入设备：鼠标、键盘
+3. 连接显示器：micro HDMI转HDMI转接头，HDMI线，显示器
+4. 连接网线（可选）
+5. 连接电源线（上电），树莓派会直接自己启动
+
+### 基础配置
+
+【[参考资料](https://ost.51cto.com/posts/2620)】
+
+初次启动后需要进行一些基础配置，后续也可以使用`raspi-config`命令配置。
+
+* 分辨率
+
+* 语言
+
+* 网络
+
+* 远程访问
+
+    这一步有利于在没有外设情况下，通过远程连接访问和操控树莓派。
 
 
 
