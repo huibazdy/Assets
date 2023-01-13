@@ -138,6 +138,10 @@
 
 ### 远程访问
 
+【**参考资料**】
+
+1. [官方文档](https://www.raspberrypi.com/documentation/computers/remote-access.html)
+
 #### SSH
 
 #### VNC
