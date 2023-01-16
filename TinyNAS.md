@@ -123,7 +123,7 @@
 2. 连接输入设备：鼠标、键盘
 3. 连接显示器：micro HDMI转HDMI转接头，HDMI线，显示器
 4. 连接网线（可选）
-5. 连接电源线（上电），树莓派会直接自己启动
+5. 连接电源线（上电），树莓派会直接自己启动（红灯亮起，绿灯闪烁）
 
 ### 基础配置
 
@@ -135,6 +135,12 @@
 * 分辨率
 * 语言
 * 网络
+
+
+
+* [更换源](https://ost.51cto.com/posts/2620?u_atoken=53e53fcb-4954-4ec1-abbf-275d10a9b9f1&u_asession=01Vw6qZNXEyW_Wg9iZStkmmbGX9Zo3AhdMf0G6KXrNuNIRrJ8L04BvxcAnBpB78EVKX0KNBwm7Lovlpxjd_P_q4JsKWYrT3W_NKPr8w6oU7K-e8nGvPlpZ2Taj0hvgeo_f8-gPxHLWqFpAa4HSYAbXp2BkFo3NEHBv0PZUm6pbxQU&u_asig=053rs23s8kYv45len_QlH5shVXKvKBtstJwCObRpUL4vQfr0rZn4mA65oMefxWwzr1dRJTWwNlYdxidPrKqxSXcekb949n9VfD3N_OrQWneH8onxnqarZKk1HzOQgkhs7dKP9pMJemc34i2tqJOb0cwKtiyObXlxo9q6ypv5wbff_9JS7q8ZD7Xtz2Ly-b0kmuyAKRFSVJkkdwVUnyHAIJzWFbzKd6WSIm8XGMobeH55xZtiSmo5M_TQ4emqkL9Y9F1-9VLfrfHBAsIx5N72vi4-3h9VXwMyh6PgyDIVSG1W_vrCW_JwV1UK9ZLyuNgEAkPsJ-mQbCrKuRU9-_GaVpXL5ulYzyvHM7wc9fK_YjcrArTa1Et6DRF9ze-a3VpN3rmWspDxyAEEo4kbsryBKb9Q&u_aref=RVXPbZPeLBTP3Gunixq7NYNZa30%3D)
+* 配置ssh
+* [输入法](https://wiki.diustou.com/cn/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%EF%BC%9A%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95)
 
 ### 远程访问
 
