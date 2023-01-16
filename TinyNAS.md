@@ -162,3 +162,5 @@
 4. [树莓派搭建私人网盘](https://zhuanlan.zhihu.com/p/364641320)
 5. [树莓派搭建NAS详细过程](https://www.jb51.net/article/233859.htm)
 6. [树莓派自建NAS云盘](https://zhuanlan.zhihu.com/p/46653100)
+7. [丢石头](https://wiki.diustou.com/cn/%E9%A6%96%E9%A1%B5)
+8. [树莓派搭建家用NAS](https://juejin.cn/post/7005784829979525157)

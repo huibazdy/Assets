@@ -20,6 +20,7 @@
 * [MagazineLib](https://magazinelib.com/)
 * [全渠道搜索](http://dir.scmor.com/)
 * [GitHub中文社区](https://www.githubs.cn/)
+* [Fritzing](https://www.macsoft.top/a_1205_1_1.html)
 
 
 
