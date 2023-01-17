@@ -21,12 +21,15 @@
 * [全渠道搜索](http://dir.scmor.com/)
 * [GitHub中文社区](https://www.githubs.cn/)
 * [Fritzing](https://www.macsoft.top/a_1205_1_1.html)
+* [国内镜像源](https://segmentfault.com/a/1190000000375848)
+* [Linux开源镜像站](https://cloud.tencent.com/developer/article/1839765)
 
 
 
 ### 知识库
 
 * [GitBook](https://www.gitbook.com/)
+* [详解Ubuntu软件源](https://www.jianshu.com/p/57a91bc0c594)
 
 
 
