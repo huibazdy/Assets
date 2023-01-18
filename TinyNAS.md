@@ -229,6 +229,28 @@ VNC是一个图形桌面共享系统，通过VNC你可以利用一台电脑（�
 
 
 
+## 3.2 更换软件源
+
+【[参考资料](https://zhuanlan.zhihu.com/p/98079246)】
+
+因为树莓派默认的源在欧洲，所以通过软件源获取软件比较慢，需要更换国内的软件源来提高下载速度。
+
+树莓派所有软件源[网址](https://www.raspbian.org/RaspbianMirrors)，找到其中的中国源，选几个添加到list里面就可以了。
+
+在更换源之前先把默认nano编辑器改为默认vim编辑器。下载vim。
+
+1. `sudo vim /etc/apt/sources.list`
+
+
+
+安装google拼音试一下速度：
+
+`sudo apt-get install fcitx fcitx-pinyin fcitx-googlepinyin`
+
+【[参考资料](https://blog.csdn.net/qq_33475105/article/details/113488707)】
+
+
+
 # 参考资料
 
 1. [为什么你需要一台NAS](https://juejin.cn/post/6988020660039581727)
