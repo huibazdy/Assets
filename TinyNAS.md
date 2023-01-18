@@ -91,6 +91,13 @@
 
 
 
+NAS数据组件：
+
+* 硬盘底座
+* 机械硬盘
+
+
+
 ## 2.2 软件平台
 
 * 安装树莓派镜像
@@ -188,9 +195,37 @@
         * 选择`Yes`
         * 选择`Finish`
 5. 从Linux电脑或Mac电脑亦或是另一个树莓派利用SSH访问树莓派不需要安装额外软件，只需要使用命令：`ssh hostname@<IP>`，用树莓派IP替换其中的IP即可。当连接开始工作后，你会看到一个Warning，点击yes即可。hostname默认是pi，但是我初次进系统时已经改成了zdy，ssh使用时记得使用最新的hostname才能连接上。最后输入用户密码即可连接（亲试MacBook可用）。
-6. 
+6. 在Windows环境SSH访问树莓派，同上，2018年后也不需要第三方软件了。
 
 
+
+* **不需要输入密码的SSH登录**
+
+为了达到不需要每次输入密码来登录ssh的效果，需要用到一个叫作`ssh key`的东西。
+
+1. 生成ssh key
+
+    在你需要连接树莓派的电脑上生成ssh key，在此之前你需要检查目前电脑上是否已经有ssh key了，需要用到命令`ls ~/.ssh`，如果结果列表中有`id_rsa.pub`或`id_dsa.pub`就说明此电脑已经有ssh key了。如果没有就需要使用命令`ssh-keygen`来生成ssh key。
+
+2. 找到公钥`id_rsa.pub`
+
+    在`~/.ssh`路径下会生成一个公钥id_rsa.pub以及一个私钥`id_rsa`。
+
+3. 将公钥复制到树莓派
+
+
+
+* **开启VNC**
+
+【[参考资料](https://www.labno3.com/2021/08/03/setting-up-a-vnc-server-on-the-raspberry-pi/)】
+
+虚拟网络计算（Virtual Network Computing，VNC）。在不方便直接操作树莓派的时候，有时候需要远程完全获取树莓派桌面来方便操作，而不是仅仅利用ssh获取其命令行操作权。
+
+VNC是一个图形桌面共享系统，通过VNC你可以利用一台电脑（运行VNC Viewer）远程操控另一台电脑（运行VNC Server）的图形界面。VNC Viewer会发送键盘以及鼠标的触碰事件（touch event）给VNC Server并且接收到反馈。
+
+最终的效果是树莓派桌面在你的远程操控电脑中的一个小窗口内。
+
+树莓派上同时装有VNC Server和VNC Viewer，但是需要使能VNC才能使用，在带图形化的树莓派上使能：Menu->Preference->Raspberry Pi Configration->Interfaces->VNC->OK
 
 
 
