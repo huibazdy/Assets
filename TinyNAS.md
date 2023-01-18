@@ -148,9 +148,49 @@
 
 1. [官方文档](https://www.raspberrypi.com/documentation/computers/remote-access.html)
 
-#### SSH
 
-#### VNC
+
+有时候我们不需要显示器，比如搭建家用NAS，完全不需要有一个显示器持续连接树莓派并开着。有时我们异地想要操控树莓派，也没法通过显示器来进行UI操作。所以利用另一台电脑远程操控树莓派是一个刚需。主要有两种解决方案：`SSH`和`VNC`。
+
+* **获取树莓派IP地址**
+
+在这之前需要明确的是，如果你要在另一台电脑上连接或者说访问树莓派，你需要知道树莓派的`IP`地址。这里获取树莓派IP有两种情况，一种是树莓派连接显示器，另一种是不连接。
+
+任何一台连接`LAN`的设备都会被分配一个IP地址。
+
+对于第一种情况，只需在终端中输入命令`hostname -I`即可获取已连接到LAN上的树莓派的IP地址。
+
+对于第二种情况，使用命令：`ping <hostname>.local`，默认情况下hostname是raspberry。
+
+也可以使用`nmap`（Network Mapper），它是一个免费开源的跨平台网络搜索工具，Mac或Windows环境可以使用[官网地址](https://nmap.org/download.html)下载。Linux环境使用命令`sudo apt-get install nmap`来安装。使用nmp工具可以扫描连接在你的网络上的所有设备。
+
+在使用nmap之前，你需要知道树莓派连接网络的子网号（subnet），子网号可以通过你操作的电脑（与树莓派在同一个局域网内）的IP地址来获取，例如你当前电脑的IP地址是`192.168.1.5`，那么树莓派所在的子网号就是`192.168.1`。
+
+接下来就可以利用nmap命令`sudo nmap -sn 192.168.1.0/24`来列出在这个子网上的所有设备的IP地址。结果列表中，raspberry字段后面跟着的就是树莓派的IP地址。注意，因为要看到hostname，所以需要在nmap命令前加上sudo。
+
+* **配置SSH服务器**
+
+首先需要明确的是，你可以利用==**SSH**==协议在同一局域网的另一台设备上远程获取树莓派的==**命令行**==。
+
+如果你想远程获取整个树莓派桌面而不仅仅是命令行，就需要用到VNC工具。
+
+配置SSH的步骤如下：
+
+1. 确保树莓派已配置安装好且连网，无线或有线连接
+2. 记下自己树莓派的IP地址，为之后远程连接做准备
+3. 利用`ipconfig`找到当前电脑（Windows）的IP地址
+4. 手动打开树莓派SSH Server，其SSH Server默认是关闭的，步骤如下：
+    * 左上树莓图标->Preference->Raspberry Pi Configration->打开SSH->点击OK
+    * 也可以使用命令行来实现相同效果：
+        * `sudo raspi-config`
+        * 选择`Interface Options`
+        * 找到最后的`SSH`
+        * 选择`Yes`
+        * 选择`Finish`
+5. 从Linux电脑或Mac电脑亦或是另一个树莓派利用SSH访问树莓派不需要安装额外软件，只需要使用命令：`ssh hostname@<IP>`，用树莓派IP替换其中的IP即可。当连接开始工作后，你会看到一个Warning，点击yes即可。hostname默认是pi，但是我初次进系统时已经改成了zdy，ssh使用时记得使用最新的hostname才能连接上。最后输入用户密码即可连接（亲试MacBook可用）。
+6. 
+
+
 
 
 
@@ -164,3 +204,5 @@
 6. [树莓派自建NAS云盘](https://zhuanlan.zhihu.com/p/46653100)
 7. [丢石头](https://wiki.diustou.com/cn/%E9%A6%96%E9%A1%B5)
 8. [树莓派搭建家用NAS](https://juejin.cn/post/7005784829979525157)
+9. [树莓派搭建NAS系统OMV](https://post.smzdm.com/p/az6m64er/)
+10. [自己动手搭建NAS和流媒体服务器](https://www.packetmania.net/2021/12/19/RPi-NAS-Plex/)
