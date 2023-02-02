@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" modified="2023-02-02T08:42:33.716Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36" version="20.8.4" etag="g4FVXgZhXtEzSe6mVge7" type="github">
+  <diagram id="K7rBS9ql_DnptG7Ui7ba" name="第 1 页">
+    <mxGraphModel dx="989" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3399FF;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-4" value="APP Framework" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-5" value="AudioTrack" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="305" y="40" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-6" value="AudioRecord" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="305" y="70" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-7" value="AudioSystem" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="305" y="100" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-8" value="AudioManager" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="305" y="130" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-9" value="(framworks/base/media/java/android/media)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-10" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="240" y="200" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-11" value="JNI" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="520" y="240" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-12" value="(framworks/base/core/jni)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="520" y="281" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-13" value="android_media_AudioTrack.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="245" y="208" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-14" value="android_media_AudioRecord.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="245" y="232" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-15" value="android_media_AudioSystem.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="245" y="258" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-16" value="android_media_AudioRecord.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="245" y="281" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-17" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CC99FF;" vertex="1" parent="1">
+          <mxGeometry x="240" y="360" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-18" value="Native Framework" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="520" y="400" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-19" value="(framworks/av/media/libaudioclient)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="520" y="440" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-20" value="AudioTrack.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="285" y="372" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-22" value="AudioRecord.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="285" y="402" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-23" value="AudioSystem.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="285" y="432" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-24" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF6666;" vertex="1" parent="1">
+          <mxGeometry x="240" y="520" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-25" value="BinderIPC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="520" y="560" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-26" value="(framworks/av/media/lib)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="520" y="600" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-27" value="IAudioTrack.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="285" y="530" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-28" value="IAudioRecord.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="285" y="557" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-29" value="IAudioFlinger.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="285" y="587" width="110" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
