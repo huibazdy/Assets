@@ -41,3 +41,9 @@
 ### 3. 查看当前目录下各个子目录的大小
 
 `du -d 1 -h`
+
+
+
+## 参考资料
+
+1. [菜鸟教程](https://www.runoob.com/w3cnote/linux-view-disk-space.html)
