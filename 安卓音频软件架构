@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-02-02T07:56:34.891Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36" version="20.8.4" etag="x6CiWOdPDoSzjKKoUgEs" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-02T08:40:31.352Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36" version="20.8.4" etag="pHacDG4pOIwTp3_sZuYP" type="github">
   <diagram id="K7rBS9ql_DnptG7Ui7ba" name="第 1 页">
     <mxGraphModel dx="989" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -70,8 +70,8 @@
         <mxCell id="K3Nrk7yxebGZtxXnkrJj-25" value="BinderIPC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
           <mxGeometry x="520" y="560" width="180" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="K3Nrk7yxebGZtxXnkrJj-26" value="(framworks/base/core/jni)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="520" y="610" width="160" height="30" as="geometry" />
+        <mxCell id="K3Nrk7yxebGZtxXnkrJj-26" value="(framworks/av/media/lib)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="520" y="610" width="180" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
