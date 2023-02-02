@@ -42,7 +42,13 @@
 
 Binder作为安卓主要的IPC方式。
 
+回想一下传统的C/S架构，Client端需要给出Server端的IP地址以及端口号才能实现访问，同理实现一个Binder为了实现C/S架构也需要一个类似于IP地址能够找到Server的入口，或者说找到Server的**接入点**。
 
+找到了通信对象之后，类似于计网中的概念，很自然的需要一个**通信协议**来实现数据传输，类似于TCP/IP协议族。
+
+对于Binder本身来说，可以将其看做是某个特定服务的访问接入点（IP+端口号）。Client通过这个Binder接入点来向Server发送请求，并使用Server的相关服务。
+
+对Client而言，Binder是一个通向特定Server的管道，要想和Server通信，必须先建立这个管道，并获得管道入口。
 
 # Binder通信协议
 
