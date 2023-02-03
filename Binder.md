@@ -50,6 +50,33 @@ Binder作为安卓主要的IPC方式。
 
 对Client而言，Binder是一个通向特定Server的管道，要想和Server通信，必须先建立这个管道，并获得管道入口。
 
+面向对象思想将IPC转化为对某个Binder对象的引用来调用该对象的方法，其特点是Binder对象是一个可以跨进程引用的对象，它的实体位于一个进程中，而它的引用位于各个进程中。而且这个引用可以从一个进程传给另一个进程。让大家都能访问一个server。
+
+Binder驱动在内核中为面向对象的这种IPC方式提供底层支持。
+
+
+
+## 四大组件
+
+Binder采用的C/S架构可以大致划分为四大组件：
+
+* Client
+* Server
+* ServiceManager
+* Binder驱动
+
+粗略的Binder架构如下图：
+
+<img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/2.png" style="zoom: 50%;" />
+
+详细的运行流程图如下：
+
+
+
+<img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/binder.png"  />
+
+
+
 # Binder通信协议
 
 
