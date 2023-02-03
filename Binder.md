@@ -112,15 +112,19 @@ Binder详细的运行流程图如下：
 
 
 
-# Binder通信协议
-
-## Binder实体
 
 
+# Service Manager
+
+分析主线为：它是怎样称为Binder机制的守护进程的。包括从用户空间到内核空间的源码。
+
+主要文件：
+
+* `binder.c`
+* `binder.h`
+* `service_manager.c`
 
 
-
-## Binder引用
 
 
 
