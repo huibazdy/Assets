@@ -60,26 +60,67 @@ Binder驱动在内核中为面向对象的这种IPC方式提供底层支持。
 
 Binder采用的C/S架构可以大致划分为四大组件：
 
-* Client
-* Server
-* ServiceManager
-* Binder驱动
+* **Client**
+
+* **Server**
+
+* **ServiceManager**
+
+    ServiceManager是Binder的守护进程，充当大管家的角色。要掌握Binder机制，首先需要了解ServiceManger的启动机制，即系统是如何首次启动ServiceManager的。当Service Manager启动后，client与server通信时才能获取Service Manager的接口进行通信。
+
+* **Binder驱动**
 
 粗略的Binder架构如下图：
 
 <img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/2.png" style="zoom: 50%;" />
 
-详细的运行流程图如下：
+【注意】
+
+此处的ServiceManger位于native framwork层（C++）。
+
+虚线说明Client与Server不是直接交互的，只代表逻辑上的交互，实际交互是通过Binder驱动来实现的。
+
+除了Binder驱动位于内核空间，其他三个组件位于用户空间。
+
+
+
+## 运行流程
+
+Binder详细的运行流程图如下：
 
 
 
 <img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/binder.png"  />
 
+## 代码解读
+
+从上至下涉及到Binder 的代码路径：
+
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/3.png)
+
+* **Java Frameworks & JNI**
+
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/4.png)
+
+* **Native Framework**
+
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/5.png)
+
+* **Driver(Kernel)**
+
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/6.png)
+
 
 
 # Binder通信协议
 
+## Binder实体
 
+
+
+
+
+## Binder引用
 
 
 
