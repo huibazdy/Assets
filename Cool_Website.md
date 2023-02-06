@@ -77,3 +77,10 @@
 * [arxiv](https://arxiv.org/)
 * [arxiv检索](https://arxivxplorer.com/)
 
+
+
+### 工具学习
+
+#### Git学习
+
+1. [可视化学习网站](https://learngitbranching.js.org/?locale=zh_CN)
