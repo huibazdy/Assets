@@ -60,5 +60,29 @@ void show(void (*pFunc)(char *) ,char * str);
 
 回调：说明`F1`不是由该函数的实现方直接调用，而是对某种事件的响应，需要由`F2`而间接调用`F1`。
 
+使用回调函数的例子：
+
+```c
+#include<stdio.h>
+
+int Callback1(int a){
+    printf("This is Callback 1,answer is: %d\n",a);
+}
+int Callback2(int b){
+    printf("This is Callback 1,answer is: %d\n",2 * b);
+}
+
+int Handle(int x, int (*pf)(int)){
+    pf(x);
+}
+
+int main()
+{
+    Handle(1,Callback1);
+    Handle(2,Callback2);
+    return 0;
+}
+```
+
 
 
