@@ -60,7 +60,7 @@ void show(void (*pFunc)(char *) ,char * str);
 
 回调：说明`F1`不是由该函数的实现方直接调用，而是对某种事件的响应，需要由`F2`而间接调用`F1`。
 
-使用回调函数的例子：
+使用回调函数（带参数的情况）的例子：
 
 ```c
 #include<stdio.h>
@@ -86,3 +86,19 @@ int main()
 
 
 
+> ***为什么要使用回调函数？***
+
+解耦。可以从下图中理解：
+
+<img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/9.png" style="zoom:50%;" />
+
+看似不过是函数的简介调用，但可以通过改变传进库函数的实参（Callback1、Callback2...）而不需要修改库函数的实现方式来实现不同的功能或者说更丰富的功能。
+
+另一方面，主函数与回调函数可能都在用户空间，而库函数可能在内核空间，对于用户不可见，更无法修改库函数的实现，而只能通过传入不同的回调函数来实现对库函数功能上的改变。
+
+
+
+参考资料：
+
+1. [C语言函数指针与回调函数](https://ost.51cto.com/posts/1114?u_atoken=fb7e9c7f-044f-4e2d-a47c-389b3a45ce95&u_asession=01zcmGlV2OXosyqiPY0MxyvfKAKO66jlTqMkdXl_ejKzds5ZLU0ld7b_MhV5GFhPZXX0KNBwm7Lovlpxjd_P_q4JsKWYrT3W_NKPr8w6oU7K8rYSYteNOjpcX2B87uPaRRq7xudZJwxaIsiPXb3YolxmBkFo3NEHBv0PZUm6pbxQU&u_asig=059Az3Xd5we7lcAslF8C0b3dAExydwLAmSBaAobUtRpv1zvHpM57Q3hBdaOh1Ive2PF4XvsJdfwLAE2nw7qr11BPtTTeGmODY3Uhs-f2ohObYefH2lz7RKbA471tFV7jhMCczfcVw2WShXJmLHZUVehyPyKppFNyyot7dvxA-msmz9JS7q8ZD7Xtz2Ly-b0kmuyAKRFSVJkkdwVUnyHAIJzea7BqLegvk-YAhvhb2K_lo8h0NUmOuJ3tEeOQsEUJ3j2Rvl9B2xFpjpl-FzTJYuz-3h9VXwMyh6PgyDIVSG1W_sWQzkH9JDQ4bA3FqmtYbXD9O7Kg2rpaCHh2dXFv--8yT6WzyW1IbYDNoYxJ5e0KGQlOAwlow_T8UqpGlItT7WmWspDxyAEEo4kbsryBKb9Q&u_aref=TyBPO%2BZQUID6K1SFDLL0CVbK1Ic%3D)
+2. [C语言回调函数详解](https://www.runoob.com/w3cnote/c-callback-function.html)
