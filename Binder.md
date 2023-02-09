@@ -114,6 +114,20 @@ Binder详细的运行流程图如下：
 
 
 
+# 关键类
+
+从以下路径的头文件（`frameworks/native/include/binder`）看出关键类有以下几个：
+
+* Binder
+* BinderService
+* IBinder
+* IInterface
+* Imemory
+* IPCThreadState
+* IServiceManager
+
+
+
 # Service Manager
 
 分析主线为：它是怎样称为Binder机制的守护进程的。包括从用户空间到内核空间的源码。
