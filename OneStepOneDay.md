@@ -213,8 +213,18 @@ n 位虚拟地址（**VA**）由两部分组成，一部分是虚拟页号（**V
 
 ![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/VA1.png)
 
+【注意】 VPN 和 PTE 有一一对应关系，例如：VPN0 对应 PTE0 。
+
 > ***物理地址***
 
 m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**Physical Page Number，PPN**），另一部分是物理页偏移量（**Physical Page Offset，PPO**）。设 PPO 位数为 p ，则 PPN 位数为 n-p 位，一个 PA 的组成示意图如下：
 
 ![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/PA.png)
+
+> ***地址翻译***
+
+地址翻译就是将一个 VA 映射到 PA 的过程。
+
+页命中的过程示意图为：
+
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E9%A1%B5%E5%91%BD%E4%B8%AD.png)
