@@ -220,25 +220,24 @@ m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**P
 
 ![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/PA.png)
 
+> ***地址翻译***
+
+地址翻译就是将一个 VA 映射到 PA 的过程。使用页表的地址翻译示意图如下：
+
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91.drawio.png)
+
 
 
 # 0214
 
-- [x] 地址翻译
 - [x] 页命中流程
 - [x] 缺页流程
 
 
 
-> ***地址翻译***
-
-地址翻译就是将一个 VA 映射到 PA 的过程。
-
-
-
 【**页命中过程**】
 
-![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E9%A1%B5%E5%91%BD%E4%B8%ADV4.png)
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E9%A1%B5%E5%91%BD%E4%B8%ADV5.png)
 
 1. CPU 生成一个虚拟地址，并将其传给 MMU ；
 2. MMU 生成页表条目**地址**（PTEA），并从高速缓存/内存请求得到它；
