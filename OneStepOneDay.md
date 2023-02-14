@@ -212,8 +212,6 @@ n 位虚拟地址（**VA**）由两部分组成，一部分是虚拟页号（**V
 
 ![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/VA1.png)
 
-【注意】 VPN 和 PTE 有一一对应关系，例如：VPN0 对应 PTE0 。
-
 > ***物理地址***
 
 m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**Physical Page Number，PPN**），另一部分是物理页偏移量（**Physical Page Offset，PPO**）。设 PPO 位数为 p ，则 PPN 位数为 n-p 位，一个 PA 的组成示意图如下：
@@ -222,7 +220,11 @@ m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**P
 
 > ***地址翻译***
 
-地址翻译就是将一个 VA 映射到 PA 的过程。使用页表的地址翻译示意图如下：
+MMU 中的地址翻译是将一个 VA 映射到 PA 的过程。CPU 中有一个名为**页表基址寄存器**（**Page Table Base Register，PTBR**）的控制寄存器，指向当前进程的页表。
+
+MMU 利用 VPN 来选择合适的 PTE ，VPN 和 PTE 有一一对应关系，例如：VPN0 对应 PTE0，VPN1 对应 PTE1 ，以此类推。找到响应PTE后，得到 PPN ，将 PPN 与 PPO（与VPO相同） 串联起来就是对应的物理地址。
+
+使用页表的地址翻译示意图如下：
 
 ![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E5%9C%B0%E5%9D%80%E7%BF%BB%E8%AF%91.drawio.png)
 
