@@ -203,7 +203,6 @@ int main()
 
 - [x] 虚拟地址
 - [x] 物理地址
-- [ ] 地址翻译
 
 
 
@@ -221,6 +220,16 @@ m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**P
 
 ![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/PA.png)
 
+
+
+# 0214
+
+- [x] 地址翻译
+- [x] 页命中流程
+- [x] 缺页流程
+
+
+
 > ***地址翻译***
 
 地址翻译就是将一个 VA 映射到 PA 的过程。
@@ -229,7 +238,7 @@ m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**P
 
 【**页命中过程**】
 
-![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E9%A1%B5%E5%91%BD%E4%B8%ADV3.png)
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E9%A1%B5%E5%91%BD%E4%B8%ADV4.png)
 
 1. CPU 生成一个虚拟地址，并将其传给 MMU ；
 2. MMU 生成页表条目**地址**（PTEA），并从高速缓存/内存请求得到它；
@@ -241,6 +250,15 @@ m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**P
 
 【**缺页过程**】
 
-![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E7%BC%BA%E9%A1%B5.drawio.png)
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E7%BC%BA%E9%A1%B5V2.png)
 
 页命中完全由硬件处理，但是未命中需要硬件与操作系统内核协作完成。
+
+1. CPU 生成一个虚拟地址，并将其传给 MMU ；
+2. MMU 生成页表条目地址（PTEA），并从高速缓存/内存请求得到它；
+3. 高速缓存/内存返回 PTE 内容给 MMU ；
+4. MMU 拿到 PTE 后，发现有效位为 0 ，触发**缺页中断**（传递 CPU 当前控制信息给缺页异常处理程序）；
+5. 缺页处理程序确定物理内存中的牺牲页，将其**换出**到磁盘；
+6. 缺页处理程序从磁盘**换入**新的虚拟页，并**更新**内存中的 PTE ；
+7. 缺页处理程序返回原来执行进程，再次执行引起缺页异常的指令，CPU 将引起缺页的 VA 再次发给 MMU；
+8. MMU 执行页命中中的步骤后，内存返回数据字给 CPU。
