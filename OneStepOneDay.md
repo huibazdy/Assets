@@ -225,7 +225,9 @@ m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**P
 
 地址翻译就是将一个 VA 映射到 PA 的过程。
 
-页命中过程：
+
+
+【**页命中过程**】
 
 ![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E9%A1%B5%E5%91%BD%E4%B8%ADV3.png)
 
@@ -234,3 +236,11 @@ m 位物理地址（**PA**）由两部分组成，一部分是物理页号（**P
 3. 高速缓存/内存返回 PTE **内容**给 MMU ；
 4. MMU 根据返回的 PTE 构造 PA，并将 PA 传给高速缓存/内存；
 5. 高速缓存/内存返回 PA 对应的数据字给 CPU 。
+
+
+
+【**缺页过程**】
+
+![](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/%E7%BC%BA%E9%A1%B5.drawio.png)
+
+页命中完全由硬件处理，但是未命中需要硬件与操作系统内核协作完成。
