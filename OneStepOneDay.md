@@ -271,3 +271,14 @@ MMU 利用 VPN 来选择合适的 PTE ，VPN 和 PTE 有一一对应关系，例
 
 **翻译后备缓冲器**（**Translation Lookaside Buffer，TLB**）是增加在 MMU 中的一小块（**虚拟寻址**）缓存，目的是提前缓存一部分 PTE 来提高 MMU 向内存查询 PTE 的效率。
 
+
+
+
+
+# 0217
+
+- [ ] man手册
+- [ ] ps命令
+- [ ] top命令
+- [ ] cat命令
+- [ ] grep命令
