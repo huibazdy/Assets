@@ -282,3 +282,63 @@ MMU 利用 VPN 来选择合适的 PTE ，VPN 和 PTE 有一一对应关系，例
 - [ ] top命令
 - [ ] cat命令
 - [ ] grep命令
+
+
+
+# 0223
+
+- [x] static成员变量
+- [x] static成员函数
+- [ ] C++对象的内存模型
+
+
+
+> 静态成员变量
+
+所有对象共用的，只有一份。例如：设计一个个人银行账户类，其中的数据成员利率，应该对所有人（所有对象）都是相同的，所以可以共用一份，利用`static`关键字将其声明为静态成员变量即可。
+
+static成员变量的核心思想是：多个对象共享某个数据。
+
+也可以理解为，static成员变量不属于某个对象，它属于类。
+
+【注意事项】
+
+* static成员变量**必须**在类声明的外部初始化
+* static成员变量的**分配内存**不是在声明类时，也不是创建对象时分配，而是在类外初始化时分配。
+* 没有被初始化的static成员变量**不能用**
+
+【三种访问方式】
+
+* 类
+* 对象
+* 对象指针
+
+
+
+> 静态成员函数
+
+静态成员函数和其他一般成员函数的区别是没有this指针，且只能处理静态成员变量。
+
+
+
+> 银行账户类
+
+```c++
+class BankAccount
+{
+public:
+    static double mRate;
+    static void setRate(const double& x){inteRate = x;}  //设置利率的函数
+};
+
+double BankAccount::mRate = 8.0;  //必须在类声明之外初始化static成员变量
+
+int main()
+{
+    Accout::setRate(6.0);   //通过类名调用static成员函数
+    BankAccount ZDY;
+    ZDY.setRate(5.0);       //通过对象调用static成员函数
+    return 0;
+}
+```
+
