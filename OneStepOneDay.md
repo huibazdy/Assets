@@ -376,3 +376,17 @@ C++中，当使用基类的引用（或指针）调用一个虚函数时，将�
 
 交叉编译器的出现就是为了解决一台主机为多个目标平台编译代码的需求。
 
+
+
+# 0309
+
+- [ ] **mpstat** 命令
+- [ ] **sysstat** 命令
+
+* `mpstat`
+
+    参考资料：
+
+    1. [Linux-mpstat命令](https://cloud.tencent.com/developer/article/1859163?from=15425&areaSource=102001.1&traceId=JFy10yxrSAb10GIDwM-9U)
+    2. [sysstat 命令](https://paul.pub/sysstat/)
+    3. [mpstat官方文档](https://man7.org/linux/man-pages/man1/mpstat.1.html#top_of_page)
