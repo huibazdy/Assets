@@ -223,6 +223,10 @@ Hexo博客框架中的布局（layout）有默认的三种，分别是：
 8. [评论问题解决](https://iyichen.xyz/2022/01/hexo-leancloud-valine-access-fail/)
 9. [Hexo最全教程](https://blog.csdn.net/sinat_37781304/article/details/82729029?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-6-82729029-blog-119089190.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-6-82729029-blog-119089190.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=13)
 10. [卜算子引入访问量](https://cloud.tencent.com/developer/article/1404868)
+11. [Hexo快速搭建博客](https://juejin.cn/post/7025425691252359181)
+12. [Hexo托管到Gitee或GitHub](https://cloud.tencent.com/developer/article/1708815)
+13. [四种博客搭建方式](https://segmentfault.com/a/1190000039078837)
+14. [Hexo教程——EasyHexo](https://easyhexo.com/)
 
 
 
