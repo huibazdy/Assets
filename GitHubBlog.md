@@ -207,11 +207,13 @@ Hexo博客框架中的布局（layout）有默认的三种，分别是：
 
 #### 百度SEO
 
-
-
 #### 谷歌SEO
 
-## 参考资料
+
+
+
+
+## 七、参考资料
 
 1. [GitHub Page与HEXO搭建个人博客](https://blog.csdn.net/yaorongke/article/details/119089190)
 2. [用HEXO搭建博客](http://lowrank.science/Hexo-Github/)
