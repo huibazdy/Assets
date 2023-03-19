@@ -9,7 +9,16 @@
 
 ### 1.2 安装Hexo
 
-在终端输入命令：**`npm install -g hexo-cli`**
+* Windows
+
+​		在终端输入命令：`npm install -g hexo-cli`
+
+* Mac
+    1. 安装 homebrew
+    2. 安装 git，`brew install git`
+    3. 安装 nodejs，`brew install node`
+    4. 查看 nodejs 版本，`node -v`，`npm -v`
+    5. 安装 Hexo，`npm install -g hexo-cli`，如果安装报错可以在前面加上`sudo`再次安装
 
 
 
@@ -22,6 +31,15 @@
 1. 找一个盘符根目录，**`hexo init <blogfolder>`**
 2. 切换到建立的blog路径，**`cd <blogfolder>`**
 3. 安装HEXO依赖模块，**`npm install`**
+
+
+
+**Mac环境：**
+
+1. 创建博客目录，`mkdir <your_blog_name>`
+2. 在博客目录下初始化 Hexo 环境，`hexo init <your_blog_name>`
+
+
 
 ### 2.2 本地启动
 
