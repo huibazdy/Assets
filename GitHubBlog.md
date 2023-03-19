@@ -11,6 +11,10 @@
 
 在终端输入命令：**`npm install -g hexo-cli`**
 
+
+
+
+
 ## 二、使用HEXO建站
 
 ### 2.1 创建博客根目录
@@ -121,6 +125,10 @@
 1. 安装RSS插件：`npm i hexo-generator-feed`
 2. 在博客根目录的_config.yml文件中，修改`Extensions`字段
 
+
+
+
+
 ## 三、新建文章
 
 ### 3.1 图片处理
@@ -130,6 +138,8 @@
 ### 3.2 新建文章
 
 `hexo new post <filename>`
+
+
 
 
 
