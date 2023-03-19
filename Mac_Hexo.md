@@ -86,7 +86,7 @@
 
 * ***浏览器 icon***
 
-    to do
+    - [x] to do
 
 * ***博文作者***
 
@@ -94,23 +94,56 @@
 
 * ***博客标题***
 
-    themes\fluid 下 <_config.yml> 中修改`blog_title`字段 
+    themes\fluid 路径下 <_config.yml> 中修改`blog_title`字段 
 
 * ***博客主页标题***
 
-    themes\fluid 下 <_config.yml> 中修改`text`字段
+    themes\fluid 路径下 <_config.yml> 中修改`text`字段
 
 * ***阅读量统计***
 
+    - [x] to do
+
 * ***评论功能***
 
-
+    - [x] to do
 
 
 
 ## 三、部署 Hexo
 
+### 3.1 部署到 GitHub
 
+【[参考资料](https://hexo.io/zh-cn/docs/one-command-deployment)】
+
+1. 博客根目录 <_config.yml> 中配置`deploy`字段
+
+    ```bash
+    deploy:
+      type: git
+      repo: https://github.com/huibazdy/huibazdy.github.io
+      branch: main
+      message: #自定义信息
+      token: #令牌认证，如果没有这个，则需要每次上传时提供目标仓库用户名和密码
+    ```
+
+2. 安装 **hexo-deployer-git** 插件
+
+    ```bash
+    npm install hexo-deployer-git --save
+    ```
+
+3. 将当前根目录下站点推送到 github
+
+    ```bash
+    hexo clean && hexo deploy
+    ```
+
+4. 查看 <Github 用户名>.github.io 网站是否能正常工作
+
+
+
+> ***注意***：上传碰到过报错 **Error: Spawn failed** 的情况。可以通过将 repo 字段改为 git@github.com:huibazdy/huibazdy.github.io.git 解决。【[参考](https://blog.zhheo.com/p/128998ac.html)】
 
 
 
