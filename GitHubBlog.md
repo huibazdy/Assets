@@ -60,7 +60,7 @@
 5. 找到`theme`字段，将默认的`landscape`修改为`fluid`主题，将`language`字段默认值`en`改为`zh-CN`，保存关闭文件
 6. 首次使用新主题，需要配置about页面：`hexo new page about`
 7. 编辑博客目录下（E:\Blog\source\about）的`index.md`文件，添加`layout: aoubt`字段，保存关闭
-8. 本地启动观察效果，依次执行一下指令
+8. 本地启动观察效果，依次执行以下指令
     * `hexo clean`（修改配置文件后，清除旧的生成页面）
     * `hexo g`（生成新的HTML页面）
     * `hexo s`（打开本地站点）
