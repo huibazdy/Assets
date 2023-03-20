@@ -157,12 +157,89 @@
 
 2. 运行本地服务器 【[命令详解](https://hexo.io/docs/server.html)】
 
-    `hexo s`  
+    `hexo server`  
 
 3. 生成静态页面 【[命令详解](https://hexo.io/docs/generating.html)】
 
-    `hexo g`
+    `hexo generate`
+
+    功能是将 source 文件夹下的所有 md 文件进行渲染生成 HTML 页面，并将生成的页面放在 public 文件夹下。
 
 4. 部署到远端服务器 【[命令详解](https://hexo.io/docs/one-command-deployment.html)】
 
     `hexo deploy`
+
+5. 清除之前生成的网页
+
+    `hexo clean`
+
+
+
+## 五、写文章
+
+### 5.1 三种布局
+
+Hexo 定义的三种布局用于创建三种不同的文件，分别是：post、page、draft 。它们会被保存到不同的路径下。自定义的布局和post布局保存路径相同。
+
+| 布局  | 路径           |
+| ----- | -------------- |
+| post  | source/_posts  |
+| page  | source         |
+| draft | source/_drafts |
+
+在 _config.yml 中的 default_layout 字段来配置，默认开启的是 post 布局。可以关闭，然后再创建时再指定布局。
+
+
+
+### 5.2 创建文章
+
+首先使用以下命令创建文章：
+
+`hexo new [layout] <title>`
+
+如果开启了 _config.yml 中的 default_layout 字段，省略 layout 会直接默认生成 post 布局。
+
+
+
+在 md 格式的文章开头处，需要提供一些相关信息来给 Hexo 框架进行渲染，这些信息称为[前置信息](https://hexo.io/zh-cn/docs/front-matter)（front-matter），用`---`符号包起来的部分。包括：
+
+| 配置字段    | 功能                                                         |
+| ----------- | ------------------------------------------------------------ |
+| title:  #   | 文章标题                                                     |
+| cover:      | 文章封面图，图片 URL 链接                                    |
+| date:       | 写作日期                                                     |
+| tags:       | 文章标签，可以尝试使用[标签插件](https://hexo.io/zh-cn/docs/tag-plugins) |
+| categories: | 文章分类                                                     |
+| keywords:   | 关键词                                                       |
+| comments:   | 是否开启评论功能                                             |
+
+
+
+插入图片
+
+- [ ] to do
+
+
+
+前置信息示例：
+
+- [ ] to do
+
+
+
+文章写作完成后，依次执行下列指令：
+
+1. `hexo clean`（清除旧网页数据）
+2. `hexo g`（渲染生成新页面）
+3. `hexo s`（本地预览，可省略）
+4. `hexo d`（部署到远端服务器）
+
+
+
+### 5.3 参考资料
+
+1. [Hexo 博客教程](https://cloud.tencent.com/developer/article/1662733)
+2. [Hexo 官方写作教程](https://hexo.io/zh-cn/docs/writing.html)
+3. [Hexo 插入图片（详细版）](https://www.jianshu.com/p/f72aaad7b852)
+4. [Hexo 图片不显示](https://blog.csdn.net/lwcxy966/article/details/91363965)
+5. [Hexo 官方插入图片教程](https://hexo.io/zh-cn/docs/asset-folders#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6)
