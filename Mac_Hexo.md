@@ -252,3 +252,16 @@
 4. [Hexo 图片不显示](https://blog.csdn.net/lwcxy966/article/details/91363965)
 5. [Hexo 官方插入图片教程](https://hexo.io/zh-cn/docs/asset-folders#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6)
 6. [Hexo 发布文章](https://www.cnblogs.com/chendh/p/16194370.html)
+
+
+
+
+
+## 六、题材来源
+
+1. OneStepOneDay.md 的日常知识盲区记录
+2. 技术书籍
+3. LeetCode题解
+4. 科技与生活
+5. 非技术阅读
+6. 生活感悟
