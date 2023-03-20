@@ -177,17 +177,25 @@
 
 ## 五、写文章
 
-### 5.1 三种布局
+### 5.1 布局
 
-Hexo 定义的三种布局用于创建三种不同的文件，分别是：post、page、draft 。它们会被保存到不同的路径下。自定义的布局和post布局保存路径相同。
+* **三种布局**
 
-| 布局  | 路径           |
-| ----- | -------------- |
-| post  | source/_posts  |
-| page  | source         |
-| draft | source/_drafts |
+    Hexo 定义的三种布局用于创建三种不同的文件，分别是：post、page、draft 。它们会被保存到不同的路径下。自定义的布局和post布局保存路径相同。
 
-在 _config.yml 中的 default_layout 字段来配置，默认开启的是 post 布局。可以关闭，然后再创建时再指定布局。
+    | 布局  | 描述 | 路径           |
+    | ----- | ---- | -------------- |
+    | post  | 文章 | source/_posts  |
+    | page  | 页面 | source         |
+    | draft | 草稿 | source/_drafts |
+
+* **默认布局**
+
+    在 _config.yml 中的 default_layout 字段来配置，默认开启的是 post 布局。可以关闭，然后再创建时再指定布局。
+
+* **草稿变文章**
+
+    可以使用命令`hexo publish [post] <title>`将指定草稿移动到 source/_posts 路径下，该命令与`new`命令类似。
 
 
 
@@ -243,3 +251,4 @@ Hexo 定义的三种布局用于创建三种不同的文件，分别是：post�
 3. [Hexo 插入图片（详细版）](https://www.jianshu.com/p/f72aaad7b852)
 4. [Hexo 图片不显示](https://blog.csdn.net/lwcxy966/article/details/91363965)
 5. [Hexo 官方插入图片教程](https://hexo.io/zh-cn/docs/asset-folders#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6)
+6. [Hexo 发布文章](https://www.cnblogs.com/chendh/p/16194370.html)
