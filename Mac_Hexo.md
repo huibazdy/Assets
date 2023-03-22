@@ -75,6 +75,7 @@
     * `hexo clean`（清除旧的生成页面）
     * `hexo g`（生成新的HTML页面）
     * `hexo s`（打开本地站点）
+8. [fluid 主题用户手册](https://fluid-dev.github.io/hexo-fluid-docs/)
 
 
 
@@ -86,7 +87,8 @@
 
 * ***浏览器 icon***
 
-    - [x] to do
+    1. 到 [iconfont](https://www.iconfont.cn/) 下载自己想要的 icon 源码
+    2. 
 
 * ***博文作者***
 
@@ -106,7 +108,9 @@
 
 * ***评论功能***
 
-    - [x] to do
+    themes\fluid 路径下 <_config.yml> 中修改`comments`字段。具体修改内容为`enable: true`，`type: valine`。
+    
+    [参考](https://www.linhuiy.com/2022/07/14/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E4%BA%8C-Fluid-%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85/)
 
 
 
@@ -219,7 +223,7 @@
 
 | 配置字段    | 功能                                                         |
 | ----------- | ------------------------------------------------------------ |
-| title:  #   | 文章标题                                                     |
+| title:      | 文章标题                                                     |
 | cover:      | 文章封面图，图片 URL 链接                                    |
 | date:       | 写作日期                                                     |
 | tags:       | 文章标签，可以尝试使用[标签插件](https://hexo.io/zh-cn/docs/tag-plugins) |
