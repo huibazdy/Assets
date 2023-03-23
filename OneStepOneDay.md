@@ -434,3 +434,12 @@ C++中，当使用基类的引用（或指针）调用一个虚函数时，将�
 
     [MySQL学习路线](https://tobebetterjavaer.com/xuexiluxian/mysql.html#%E8%A7%86%E9%A2%91)
 
+- [ ] Qt
+
+    1. [Install官方教程](https://courses.qt.io/how-to-install-qt/index.html#/lessons/9Xu13cVlQIZWZ41hYY0rVjkFSeXzrpoa)
+    2. [Qt-installer Download](https://www.qt.io/download-qt-installer)
+    3. [Qt前景](https://www.cnblogs.com/chinasoft/p/16201049.html)
+    4. [Qt发展前景](https://www.zhihu.com/question/47128451/answer/2119012182)
+    5. [Qt概述](https://blog.csdn.net/qq_20173195/article/details/127100201)
+    6. [飞援兼职平台](https://www.freetalen.com/)
+
