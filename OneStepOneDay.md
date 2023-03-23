@@ -406,3 +406,31 @@ C++中，当使用基类的引用（或指针）调用一个虚函数时，将�
 1. [申请内存时底层发生了什么](https://zhuanlan.zhihu.com/p/367386292)
 2. [自己实现一个malloc](https://zhuanlan.zhihu.com/p/367060283)
 
+
+
+# 0323
+
+- [ ] RPC
+
+    [RPC详解](https://waylau.com/remote-procedure-calls/)
+
+- [ ] gRPC
+
+    [gRPC官方文档中文版](https://doc.oschina.net/grpc?t=58008)
+
+- [ ] Redis
+
+    [Redis黑马培训课](https://www.bilibili.com/video/BV1cr4y1671t/)
+
+    [一个Redis在线模拟网站](https://try.redis.io/)
+
+    [Redis官方教程](https://www.redis.net.cn/tutorial/3501.html)
+
+    [Redis源码阅读](https://github.com/huangz1990/redis-3.0-annotated)
+
+    [Redis在线命令指南](http://redisdoc.com/)
+
+- [ ] MySQL
+
+    [MySQL学习路线](https://tobebetterjavaer.com/xuexiluxian/mysql.html#%E8%A7%86%E9%A2%91)
+
