@@ -233,7 +233,11 @@
 
 
 
-【**插入图片**】
+【**文章全局字体**】
+
+
+
+【**插入文章内部图片**】
 
 1. **使能资源文件夹**
 
@@ -249,9 +253,15 @@
 
 
 
-前置信息示例：
+【**插入文章在首页封面图片**】
 
-- [ ] to do
+在文章开头的 **Front-matter** 中添加`index_img`属性，在 source 路径下建立 img 文件夹，将想要添加的图片放入该文件夹下。编辑属性：`index_img: /img/imgName.jpg`。（建议图片大小最好小于 1 M，否则会拖慢加载速度）。
+
+（[参考资料](https://fluid-dev.github.io/hexo-fluid-docs/guide/#%E6%96%87%E7%AB%A0%E5%9C%A8%E9%A6%96%E9%A1%B5%E7%9A%84%E5%B0%81%E9%9D%A2%E5%9B%BE)）
+
+【**插入文章内顶部图片**】
+
+在文章开头的 **Front-matter** 中添加`banner_img`属性，编辑属性：`banner_img: /img/imgName.jpg`。
 
 
 
@@ -272,6 +282,7 @@
 4. [Hexo 图片不显示](https://blog.csdn.net/lwcxy966/article/details/91363965)
 5. [Hexo 官方插入图片教程](https://hexo.io/zh-cn/docs/asset-folders#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6)
 6. [Hexo 发布文章](https://www.cnblogs.com/chendh/p/16194370.html)
+7. [Fluid配置指南](https://fluid-dev.github.io/hexo-fluid-docs/guide/)
 
 
 
