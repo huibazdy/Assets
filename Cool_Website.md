@@ -30,6 +30,7 @@
 
 * [GitBook](https://www.gitbook.com/)
 * [详解Ubuntu软件源](https://www.jianshu.com/p/57a91bc0c594)
+* [CS自学网](https://csdiy.wiki/)
 
 
 
