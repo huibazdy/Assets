@@ -24,6 +24,30 @@
 
 
 
+单个进程（父进程）创建管道，得到两个文件描述符：`fd[0]`、`fd[1]`
+
+图一
+
+但是单个进程的管道是不存在通信的，父进程调用创建子进程，此时子进程也有两个文件描述符指向同一个管道。
+
+图二
+
+分为两种情况：
+
+1. 数据流向为从父进程到子进程
+
+    父进程关闭读端（`close(fd[0])`），子进程关闭写端（`close(fd[1])`），这样父进程可以往管道里写数据，子进程可以从管道里读数据。
+
+    图三
+
+2. 数据流向为从子进程到父进程
+
+    父进程关闭写端（`close(fd[1])`），子进程关闭读端（`close(fd[0])`），这样子进程可以往管道里写数据，父进程可以从管道里读数据。
+
+    图四
+
+
+
 # 二、使用管道
 
 一般在创建子进程前由父进程调用`pipe()`系统调用，这样两个进程才能共享管道的读写端两个 fd，然后利用`fork()`系统调用创建子进程。
@@ -58,12 +82,12 @@ int main()
         printf("Failed to fork!\n");
     else if(pid == 0){         //子进程
         close(fd[0]);          //关闭读端
-        ret = write(fd[1],msg,strlen(msg));  //向管道写端写数据
+        ret = write(fd[1],msg,strlen(msg));  //子进程向管道写端写数据
         exit(0);
     }
     else{                 //父进程
         close(fd[1]);     //关闭管道写端
-        ret = read(fd[0], buf, sizeof(buf)); //从管道读端读取数据
+        ret = read(fd[0], buf, sizeof(buf)); //父进程从管道读端读取数据
         printf("Parent read %d bytes data: %s\n",ret,buf);
     }
     return 0;
@@ -108,4 +132,5 @@ int main()
 3. [一文弄懂 Linux 进程间通信](https://zhuanlan.zhihu.com/p/461486127)
 4. [Linux 系统编程之管道](https://cloud.tencent.com/developer/article/1007497)
 5. [进程间五种通信方式](https://learnku.com/articles/44477)
+6. [管道读写端关闭问题](https://www.cnblogs.com/whiteHome/p/4863516.html)
 
