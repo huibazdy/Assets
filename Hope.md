@@ -8,11 +8,11 @@
 
 技能树
 
-* 熟悉C/C++编程语言，了解Python语言并有爬虫编程经验
+* 熟悉C/C++编程语言，了解Python、Java语言
 * 熟悉基本数据结构，如数组、链表、二叉树等
+* 熟悉操作系统基本原理，并了解常见进程间通信方式 Android 中Binder，Linux 中 Pipe、Shared Memory 等
+* 了解 Linux 系统编程及 Linux 子系统，如文件系统（VFS）、进程管理等
 * 能熟练使用git、UML等生产力工具，熟悉主流开发环境Android Studio、Clion、PyCharm等
-* 熟悉操作系统基本原理，
-* 了解Linux系统编程以及 Linux 核心子系统，如文件系统（VFS）、进程管理等
 
 
 
