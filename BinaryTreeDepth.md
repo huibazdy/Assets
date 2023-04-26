@@ -56,6 +56,13 @@ void levelOrder(BinaryTreeNode* root)
             q.push(root->left);
         if(root->right != nullptr)
             q.push(root->right);
+        
+        //下一个要访问的节点
+        root = q.front();
+        if(q.empty())
+            return;
+        else
+            q.pop();
     }
 }
 ```
