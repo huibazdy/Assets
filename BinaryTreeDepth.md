@@ -72,3 +72,39 @@ void levelOrder(BinaryTreeNode* root)
 > 【**拓展**】
 >
 > 使用层序遍历模板可以做LeetCode：107 199 637 429 515 116 559
+
+
+
+
+
+> 【**平衡二叉树**】
+>
+> 树的每个节点左右子树深度相差不超过 1
+
+判断一个二叉树是否为平衡二叉树最自然的思路是：遍历树节点，对每个节点调用`treeDepth()`来求子左右子树的深度，然后再判断其左右子树的深度之差是否超过 1 。
+
+```c++
+#include "treeDepth.h"
+
+bool isBalanced(BinaryTreeNoode* root)
+{
+    if(root == nullptr)
+        return true;
+    
+    //判断根节点平衡
+    int leftDepth = treeDepth(root->left);
+    int rightDepth = treeDepth(root->right);
+    int diff = leftDepth - rightDepth; 
+    if(diff < -1 || diff > 1)
+        return false;
+    
+    //递归调用，判断除根节点外其他节点也平衡
+    return isBalanced(root->left) && isBalanced(root->right);
+}
+```
+
+上述解法简洁，但是带来的问题是除了根节点外其他节点都会被访问多次。
+
+
+
+只遍历一次的解法：利用后序遍历，遍历每个节点的时候记录它的深度，一边遍历一边判断节点是否平衡
