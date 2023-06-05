@@ -1,3 +1,11 @@
+## Get out of your comfort zone
+
+
+
+## Don't give up easy 
+
+
+
 ### Linux
 
 * [Linux内核源码解读官方文档](https://www.kernel.org/doc/html/latest/core-api/index.html)
@@ -31,6 +39,7 @@
 * [GitBook](https://www.gitbook.com/)
 * [详解Ubuntu软件源](https://www.jianshu.com/p/57a91bc0c594)
 * [CS自学网](https://csdiy.wiki/)
+* [StackExchange](https://stackexchange.com/)
 
 
 
