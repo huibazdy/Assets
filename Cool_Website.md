@@ -31,6 +31,7 @@
 * [国内镜像源](https://segmentfault.com/a/1190000000375848)
 * [Linux开源镜像站](https://cloud.tencent.com/developer/article/1839765)
 * [PDFDrive](https://www.pdfdrive.com/)
+* [Programming Books](https://awesome-programming-books.github.io/)
 
 
 
