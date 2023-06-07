@@ -29,3 +29,8 @@ tar -xf archive.tar.xz -C [directory]
 
 
 
+## 查找文件
+
+* ***locate***：`locate <filename>`（一周更新一次文件库，但效率比find命令高）
+* ***find***：`find [path] -name <filename>`
+
