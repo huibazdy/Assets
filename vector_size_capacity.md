@@ -73,3 +73,28 @@ int main()
 输出分别是：4 4 和 5 5
 
 【**注意**】使用 reserve 增长后并不会像 resize 那样默认初始化新元素，知识改变了容量，对存储对象不会改变。
+
+
+
+> 释放容器中的多余内存
+
+有一种常见情况是 vector 的 capacity 大于实际 size，此时可以考虑使用 [shrink_to_fit()](https://cplusplus.com/reference/vector/vector/shrink_to_fit/) 函数来减少 capacity 使其和 size 相同，从而达到释放多于内存的目的。
+
+```c++
+...
+int main()
+{
+    vector<int> v{1,2,3,4};
+    cout<<v.size()<<" "<<v.capacity()<<endl;  //输出：4 4
+
+    v.resize(2);
+    cout<<v.size()<<" "<<v.capacity()<<endl;  //输出：2 4
+    
+    //此时 capacity 为 4，但 size 为 2，需要优化内存
+	v.shrink_to_fit();
+    cout<<v.size()<<" "<<v.capacity()<<endl;  //输出：2 2
+    ...
+}
+```
+
+当 size 减小到 2 后，使用 shrink_to_fit() 使 capacity 也减小到 2。
