@@ -6,11 +6,11 @@
 
 `-O0`
 
-构建可执行文件，关闭编译器优化
+构建可执行目标文件，并关闭编译器优化
 
 `-g`
 
-打印调试信息
+在编译出来的目标文件中加上调试信息
 
 `-g3`
 
@@ -24,13 +24,35 @@
 
 ## 启动 GDB
 
-`gdb <program_file_name>`
+`gdb <ELF_file_name>`
 
-对某个源文件进入GDB调试模式
+> 对某个源文件进入GDB调试模式
 
-`gdb -q <program_file_name>`
+`gdb -q <ELF_file_name>`
 
-进入GDB调试模式，但不显示欢迎语
+> 进入GDB调试模式，但不显示欢迎语，`q`代表quiet
+
+
+
+对加了调试信息的ELF文件启动gdb后会有一行提示符：
+
+![image-20230630151547817](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20230630151547817.png)
+
+它的意思是从编译得到的目标文件中读取**符号文件**（**symbols**）完毕。
+
+
+
+如果没有加调试信息的ELF文件启动提示：
+
+![image-20230630152434309](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20230630152434309.png)
+
+依然是读取了符号文件，但是没有读取到任何调试符号文件。
+
+
+
+对于大型程序，为了避免重复编译，可以利用`strip`指令去掉ELF文件中已经带有的调试信息
+
+![image-20230630152856611](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20230630152856611.png)
 
 
 
