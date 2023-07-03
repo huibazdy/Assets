@@ -27,6 +27,23 @@ tar -xf archive.tar.xz -C [directory]
 
 
 
+### .tar.gz 或 .tgz
+
+* 解压
+
+    ```shell
+    tar -zxvf <filename>   #解压到当前目录
+    tar -C <path> -zxvf <filename>  #解压到指定目录
+    ```
+
+* 压缩
+
+    ```shell
+    tar -zcvf <filename> <direcory_name>  #将Directory压缩为.tar.gz文件
+    ```
+
+
+
 
 
 ## 查找文件
