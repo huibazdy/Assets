@@ -8,13 +8,13 @@
 
 技能树
 
-* 熟悉C/C++编程语言，了解Python、Java语言
+* 熟悉C/C++编程语言
 * 熟悉 Android 音频软件架构
 * 熟悉基本数据结构，如数组、链表、二叉树等
 * 了解常用设计模式，如单例、代理模式、观察者模式等。
 * 熟悉操作系统基本原理，并了解常见进程间通信方式 Android 中Binder，Linux 中 Pipe、Shared Memory 等
 * 了解 Linux 系统编程及 Linux 子系统，如文件系统（VFS）、进程管理等
-* 能熟练使用git、UML等生产力工具，熟悉主流开发环境Android Studio、Clion、PyCharm等
+* 能熟练使用git、UML等生产力工具
 
 
 
@@ -33,6 +33,7 @@
 2. 负责小爱同学语音唤醒的集成与开发以及文档撰写工作
 3. Atest 框架下的音频子模块单元测试编写
 4. 音频子系统在 frameworks 层以及 HAL 层的代码，bug识别与解决
+5. 安卓多媒体框架下的Google Test测试框架集成、编写单元测试用例以及文档撰写
 
 
 
