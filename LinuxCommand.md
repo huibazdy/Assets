@@ -33,7 +33,7 @@ tar -xf archive.tar.xz -C [directory]
 
     ```shell
     tar -zxvf <filename>   #解压到当前目录
-    tar -C <path> -zxvf <filename>  #解压到指定目录
+    tar -C <Des_path> -zxvf <filename>  #解压到指定目录
     ```
 
 * 压缩
