@@ -13,7 +13,7 @@ git log --oneline <filename>
 查看某个提交记录的变更情况：
 
 ```shell
-git show --stat <commitID>        # 其中 commitID 从上一条指令种获取
+git show --stat <commitID>        # 其中 commitID 从上一条指令中获取
 ```
 
 
