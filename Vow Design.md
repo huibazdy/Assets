@@ -130,4 +130,28 @@ step：10 ms
 * Hanning
 * Hanmming
 
-![image-20231002170304393](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20231002170304393.png)
+![image-20231002171528608](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20231002171528608.png)
+
+
+
+## 帧后处理
+
+Frame Post-Processing
+
+特征从经过窗函数的帧中提取，在送入机器学习模型前，有时需要进行帧后处理。三种常见的后处理方法有：
+
+* **帧叠加（Frame Stacking）**
+
+    将相邻帧叠加在一起，组成一个更大的帧
+
+* **降采样（Frame Subsampling）**
+
+    按照一定频率，丢弃掉一些帧
+
+* **正则化（Frame Normalization）**
+
+    将帧里的每一个采样点分别进行正则化，使其符合正态分布
+
+
+
+![image-20231002171446052](https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20231002171446052.png)
