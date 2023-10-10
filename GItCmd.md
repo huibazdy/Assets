@@ -29,7 +29,7 @@ git show <commitID>
 指定日期：
 
 ```shell
-git log --oneline --since="2023-08-01" --until="2023-08-21" --author="zhangdaoyuan1"
+git log --oneline --since="2023-08-01" --until="2023-08-21" --author="zhangdaoyuan1" <filename>
 ```
 
 

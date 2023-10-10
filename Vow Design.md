@@ -173,8 +173,8 @@ Frame Post-Processing
 | 短时能量（Short-time energy）                 | 帧内采样点幅度平方和 | 语音活动检测（**Voice Activity Detection**，**VAD**）：也就是监测是否有语音信号，实质上是高能量判断为是，低能量判断为不是。这是一种粗略的做法，一旦包含噪声或者音乐就无法利用短时能量这个特征判断是否有语音信号。 |
 | 短时平均幅度（Short-time average magnitude）  |                      | 自动增益控制（**Automation Gain Control，AGC**）：AGC的目的是让音频信号的能量平稳变化，避免音量特别大或特别小。 |
 | 短时过零率（Short-time zero cross rate，ZCR） | 信号有多少次穿过y=0  | 一定程度上反映信号频率                                       |
-| 短时自相关系数（Short-time autocorrelation）  |                      |                                                              |
-| 短时平均幅度差函数                            |                      |                                                              |
+| 短时自相关系数（Short-time autocorrelation）  |                      | 每个 k 值有一组特征，用于基音估算                            |
+| 短时平均幅度差函数                            |                      | 每个 k 值有一组特征，用于基音估算                            |
 | 短时线性预测编码                              |                      |                                                              |
 
 
@@ -182,4 +182,30 @@ Frame Post-Processing
 * 频域特征
 
     先将波形进行傅里叶变换，在变换后的傅里叶域中提取。
+
+
+
+## 傅里叶分析
+
+
+
+| 信号类型（Type of Signal）               | 傅里叶分析方法（Fourier Analysis Method）             |
+| ---------------------------------------- | ----------------------------------------------------- |
+| 周期连续信号                             | 傅里叶级数（Fourier Series）                          |
+| 非周期连续信号                           | 连续傅里叶变换                                        |
+| 周期离散序列                             | 离散傅里叶级数                                        |
+| 非周期离散序列                           | 离散时间傅里叶变换                                    |
+| 有限离散序列（Finite Discrete Sequence） | 离散傅里叶变换（**Discrete Fourier Transform，DFT**） |
+
+ 短时分析中，经过分帧和窗函数处理的帧内音频信号是有限离散序列。
+
+<img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20231010103153308.png" alt="image-20231010103153308" style="zoom: 25%;" />
+
+
+
+DFT 解读：
+
+<img src="https://raw.githubusercontent.com/huibazdy/TyporaPicture/main/image-20231010103329739.png" alt="image-20231010103329739" style="zoom:25%;" />
+
+复杂度是 N^2 ，不能接收大量数据点，因此引入降低时间复杂度的快速傅里叶变换（Fast Fourier Transform，FFT）：
 
