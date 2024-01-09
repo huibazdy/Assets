@@ -114,3 +114,10 @@
 ### 壁纸
 
 1. https://wallpaperaccess.com/
+
+
+
+### 公开课
+
+1. [6.S081](https://pdos.csail.mit.edu/6.S081/2020/schedule.html)
+2. 
